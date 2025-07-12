@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サーバー管理・開発班規約</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #f0f8e8 0%, #e8f5d8 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.2)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.25)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2d5016;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #4a7c59;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fff8 0%, #f0f8f0 100%);
+            border-radius: 15px;
+            border-left: 5px solid #90EE90;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #2d5016;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #90EE90;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(144, 238, 144, 0.5);
+        }
+        
+        .rule-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            border: 1px solid #e0f0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .rule-item:hover {
+            background: rgba(255, 255, 255, 1);
+            border-color: #90EE90;
+            transform: translateX(5px);
+        }
+        
+        .rule-item h3 {
+            color: #4a7c59;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .rule-item p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+            color: #2d5016;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .warning {
+            background: linear-gradient(135deg, #ffeb3b 0%, #fff176 100%);
+            color: #f57f17;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .team-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+            color: #2d5016;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>運営・開発チーム合意事項</h1>
+            <p class="subtitle">サーバー管理班・プラグイン管理班</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📋 基本的な取り決め</h2>
+                
+                <div class="rule-item">
+                    <h3>1. 定期ミーティングについて</h3>
+                    <p><span class="highlight">毎週1回</span>のミーティングに参加をお願いします。</p>
+                    <p>参加できない場合は、事前に<span class="highlight">「参加できない」</span>の回答を押していただけるとありがたいです。</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3>2. 長期不参加への対応</h3>
+                    <p>以下のような状況が<span class="highlight">1ヶ月間</span>続いた場合、運営側から個別に連絡させていただきます。</p>
+                    <p>• ミーティングに参加されていない場合</p>
+                    <p>• GitHubでの更新や活動が確認できない場合</p>
+                    <p>• Discordでの連絡・反応がない場合</p>
+                    <p>• その他、チーム活動への参加が長期間確認できない場合</p>
+                    <div class="warning">
+                        <strong>注意:</strong> 連絡に応じていただけない場合、チーム権限の見直しを行う場合があります。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔧 プラグイン管理班</h2>
+                <div class="team-badge">Plugin Management Team</div>
+                
+                <div class="rule-item">
+                    <h3>1. 成果報告について</h3>
+                    <p>ミーティング時に<span class="highlight">開発成果の報告</span>をお願いします。</p>
+                    <p>進捗状況、完成した機能、直面している課題などを共有してください。</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3>2. GitHub更新について</h3>
+                    <p><span class="highlight">GitHubの更新を継続的に</span>行ってください。</p>
+                    <p>コードの変更、コミット、プルリクエストなどを適切に管理してください。</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3>3. 成果物の著作権について</h3>
+                    <p>運営が依頼して制作した成果物は、<span class="highlight">TsubuServerの共同著作物として扱う</span>ものとします。</p>
+                    <p>これらの成果物を他のサーバーやプロジェクト等で使用する場合は、事前に運営の許可を得る必要があります。</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🗂 サーバー管理班（構成確認・進行管理）</h2>
+                <div class="team-badge">Server Management Team</div>
+                
+                <div class="rule-item">
+                    <h3>1. 全体の進行状況管理</h3>
+                    <p>サーバー管理班は、<span class="highlight">全体の進行状況や仕様の把握・確認、GitHub上の更新のチェックなどを行う役割</span>です。</p>
+                    <p>必要に応じて、鯖主・プラグイン管理班と連携を取り、調整や補助を行ってください。</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3>2. チーム間の橋渡し</h3>
+                    <p>チーム間の橋渡し的な立ち位置として、<span class="highlight">仕様の理解・状況把握・整理</span>を担っていただく場面もあります。</p>
+                </div>
+            </div>
+            
+            <div class="section pulse">
+                <h2>✨ チーム精神</h2>
+                <div class="rule-item">
+                    <p>• 本合意事項は、運営体制や進行状況に応じて適宜見直しを行います。</p>
+                    <p>• 全体としては「<span class="highlight">参加できる範囲で、継続的に協力し合える体制</span>」を目指しています。</p>
+                    <p>お互いを尊重し、オープンなコミュニケーションを心がけましょう。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>ご協力よろしくお願いいたします。</strong></p>
+            <p>質問や懸念事項がある場合は、遠慮なく運営チームにお声がけください。</p>
+        </div>
+    </div>
+</body>
+</html>
