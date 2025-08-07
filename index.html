@@ -3,177 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsubusaba 運営スタッフ合意</title>
+    <title>Tsubusaba規約</title>
     <style>
-        body {
-            font-family: 'Yu Gothic', 'Hiragino Sans', 'Meiryo', sans-serif;
-            background: linear-gradient(135deg, #1a3d1f 0%, #2c5530 50%, #1e4a23 100%);
+        * {
             margin: 0;
-            padding: 20px;
-            line-height: 1.8;
-            color: #2c5530;
-            min-height: 100vh;
-            font-size: 18px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
+
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+            background: linear-gradient(135deg, #f0f8e8 0%, #e8f5d8 50%, #d4edc0 100%);
+            min-height: 100vh;
+            color: #1a1a1a;
+            line-height: 1.8;
+            padding: 20px;
+            font-size: 16px;
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(44, 85, 48, 0.15);
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
         }
-        
-        h1 {
-            color: #1a3d1f;
+
+        .header {
+            background: linear-gradient(135deg, #7cb342 0%, #8bc34a 100%);
+            color: white;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
-            font-weight: bold;
-            border-bottom: 4px solid #90ee90;
-            padding-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 2px;
+            padding: 30px 20px;
+            position: relative;
         }
-        
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
         .intro {
-            background: linear-gradient(45deg, #f0fff0, #e8f5e8);
-            padding: 30px;
+            background: linear-gradient(135deg, #f8fdf4 0%, #f1f8e9 100%);
+            border: 3px solid #7cb342;
             border-radius: 12px;
-            margin-bottom: 35px;
-            border-left: 6px solid #90ee90;
-            font-size: 19px;
-            box-shadow: 0 4px 12px rgba(144, 238, 144, 0.2);
+            padding: 30px;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #1a1a1a;
+            line-height: 1.9;
+            box-shadow: 0 4px 20px rgba(124, 179, 66, 0.15);
         }
-        
+
         .section {
             margin-bottom: 30px;
-            padding: 30px;
-            background: rgba(248, 255, 248, 0.8);
+        }
+
+        .section-title {
+            color: #5a7c2a;
+            font-size: 1.5em;
+            font-weight: 900;
+            margin-bottom: 25px;
+            padding: 15px 0;
+            border-bottom: 4px solid #7cb342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rule-item {
+            background: #ffffff;
+            border: 3px solid #c5e1a5;
             border-radius: 12px;
-            border: 2px solid rgba(144, 238, 144, 0.4);
-            box-shadow: 0 4px 12px rgba(144, 238, 144, 0.15);
-            font-size: 18px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.1);
         }
-        
-        .section h2 {
-            color: #1a3d1f;
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            border-left: 6px solid #90ee90;
-            padding-left: 15px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+
+        .rule-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(124, 179, 66, 0.2);
+            border-color: #7cb342;
+            background: #fefffe;
         }
-        
-        .section p {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .highlight {
-            background: rgba(144, 238, 144, 0.35);
-            padding: 4px 12px;
-            border-radius: 8px;
-            color: #0d2a10;
-            font-weight: bold;
-            border: 2px solid rgba(144, 238, 144, 0.5);
-            font-size: 19px;
+
+        .rule-number {
+            color: #7cb342;
+            font-weight: 900;
+            font-size: 1.8em;
             display: inline-block;
-            margin: 0 2px;
+            background: linear-gradient(135deg, #c5e1a5 0%, #aed581 100%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            box-shadow: 0 2px 8px rgba(124, 179, 66, 0.3);
         }
-        
-        .footer-message {
-            text-align: center; 
-            margin-top: 40px; 
-            padding: 25px; 
-            background: linear-gradient(45deg, rgba(240, 255, 240, 0.7), rgba(232, 245, 232, 0.7)); 
-            border-radius: 12px; 
-            font-weight: bold; 
-            color: #1a3d1f; 
-            font-size: 20px;
-            border: 2px solid rgba(144, 238, 144, 0.4);
-            box-shadow: 0 4px 12px rgba(144, 238, 144, 0.2);
+
+        .rule-title {
+            color: #2d4016;
+            font-weight: 900;
+            font-size: 1.3em;
+            margin: 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        
-        @media (max-width: 600px) {
+
+        .rule-description {
+            color: #1a1a1a;
+            line-height: 1.9;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffd54f 0%, #ffeb3b 100%);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 900;
+            color: #1a1a1a;
+            border: 2px solid #ffc107;
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95em;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border: 4px solid #ff9800;
+            border-radius: 16px;
+            padding: 35px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.2);
+        }
+
+        .important-notice h3 {
+            color: #e65100;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .important-notice p {
+            font-size: 1.1em;
+            font-weight: 600;
+            line-height: 1.8;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #37474f 0%, #455a64 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .copyright {
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
             body {
-                font-size: 16px;
+                padding: 15px;
+                font-size: 15px;
             }
-            
-            .container {
+
+            .content {
+                padding: 30px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .rule-item {
                 padding: 25px;
-                margin: 10px;
             }
-            
-            h1 {
-                font-size: 28px;
-                letter-spacing: 1px;
+
+            .rule-number {
+                font-size: 1.5em;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
             }
-            
-            .section h2 {
-                font-size: 20px;
+
+            .rule-title {
+                font-size: 1.2em;
             }
-            
-            .section {
-                font-size: 16px;
-                padding: 20px;
-            }
-            
-            .section p {
-                font-size: 16px;
-            }
-            
-            .highlight {
-                font-size: 17px;
-            }
-            
+
             .intro {
-                font-size: 17px;
-            }
-            
-            .footer-message {
-                font-size: 18px;
+                padding: 25px;
+                font-size: 1.1em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Tsubusaba 運営スタッフ合意</h1>
-        
-        <div class="intro">
-            <p>本サーバー「Tsubusaba」において、参加者の皆様が制作される建築物、デザイン、プログラム、テキスト、画像、音声、その他一切の創作物（以下、「本著作物」と総称します）に関する著作権およびその他一切の知的財産権の取り扱いにつきましては、以下の通りとさせていただきます。</p>
-            
-            <p>Tsubusaba の円滑な運営と、将来的な本著作物の公開や発展を見据え、権利の帰属および利用方法については、参加者全員が以下の共通合意事項に基づくものとし、個別の協議による例外は原則として設けません。これにより、権利管理の簡素化およびトラブルの未然防止を図ります。</p>
+        <div class="header">
+            <h1>Tsubusaba規約</h1>
         </div>
-        
-        <div class="section">
-            <h2>1. 著作物の権利帰属</h2>
-            <p>制作されたすべての本著作物は、<span class="highlight">Tsubusaba の共同著作物</span>として扱われます。これらの著作物を、Tsubusaba 以外のサーバー・プロジェクト・サービス等で使用する場合は、<span class="highlight">Tsubusaba管理者の事前許可</span>が必要です。</p>
+
+        <div class="content">
+            <div class="intro">
+                本サーバーにおいて、参加者の皆様が制作される建築物、デザイン、プログラム、テキスト、画像、音声、その他一切の創作物（以下、「本著作物」と総称します）に関する著作権およびその他一切の知的財産権の取り扱いにつきましては、以下の通りとさせていただきます。<br><br>
+                サーバーの円滑な運営と、将来的な本著作物の公開、発展を見据え、権利の帰属および利用方法については、<span class="highlight">参加者全員が以下の共通合意事項に基づく</span>ものとします。
+            </div>
+
+            <div class="section">
+                <div class="section-title">規約について</div>
+
+                <div class="rule-item">
+                    <div class="rule-number">1.</div>
+                    <div class="rule-title">本著作物の権利帰属</div>
+                    <div class="rule-description">
+                        制作された全ての本著作物は、本プロジェクトの<span class="highlight">共同著作物</span>として扱われます。これらの本著作物を他のサーバーやプロジェクト等で使用する場合は、<span class="highlight">事前に管理者の許可</span>を得る必要があります。
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-number">2.</div>
+                    <div class="rule-title">SNS等での公開</div>
+                    <div class="rule-description">
+                        本著作物に関する画像・動画などをX（旧Twitter）やその他SNS・Webサイト等に投稿することは可能ですが、必ず<span class="highlight">「©2025 Tsubusaba All Rights Reserved.」</span>というクレジットを、投稿文末または画像下部など明確に視認できる形で表記してください。
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-number">3.</div>
+                    <div class="rule-title">サーバー辞退時の対応</div>
+                    <div class="rule-description">
+                        プロジェクトからの辞退を希望される場合は、<span class="highlight">必ず事前にプロジェクト管理者へ連絡</span>し、対応をお待ちください。万が一、一ヶ月以上連絡が取れない場合は、DiscordのDM等を通じてご連絡を差し上げます。それでも連絡がない場合は辞退扱いとし、開発・参加権限を解除いたします。
+                    </div>
+                </div>
+            </div>
+
+            <div class="important-notice">
+                <h3>重要なお知らせ</h3>
+                <p>本サーバーへのご応募をされる方は、上記規約について<strong>ご応募の時点で原則として同意していただく必要がございます。</strong></p>
+                <p>これは、プロジェクトの透明性を確保し将来的な予期せぬトラブルを回避するための重要なステップとなります。</p>
+                <p>ご不明な点やご要望がございましたら、面談時にご質問ください。</p>
+            </div>
+
+            <div style="text-align: center; padding: 30px; font-style: italic; color: #5a7c2a; font-size: 1.2em; font-weight: 600;">
+                皆様のご理解とご協力をお願い申し上げます。
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>2. 参加中断・辞退時の対応</h2>
-            <p>Tsubusaba からの辞退を希望される場合は、<span class="highlight">必ず事前にTsubusaba管理者までご連絡ください</span>。1ヶ月以上連絡が取れない場合は、<span class="highlight">辞退とみなした上で運営権限を解除</span>させていただく場合があります。あらかじめご了承ください。</p>
-        </div>
-        
-        <div class="section">
-            <h2>3. 秘密保持</h2>
-            <p>運営スタッフとして知り得た内部の企画・仕様・計画などは、<span class="highlight">外部に無断で公開しないでください</span>。</p>
-            <p>特に開発中の仕様・リリース情報などは公開時期や方法が調整されるため、管理者の指示に従ってください。</p>
-        </div>
-        
-        <div class="section">
-            <h2>4. 応募時の同意</h2>
-            <p>Tsubusaba の運営を希望される方は、<span class="highlight">本合意内容に原則同意いただくことが必要</span>です。</p>
-            <p>ご不明な点や懸念がございましたら、応募時にその旨をお伝えいただくか、面談時にご質問ください。</p>
-        </div>
-        
-        <div class="footer-message">
-            皆様のご理解とご協力をお願い申し上げます。
+
+        <div class="footer">
+            <div>Tsubusaba Project</div>
+            <div class="copyright">©2025 Tsubusaba All Rights Reserved.</div>
         </div>
     </div>
 </body>
