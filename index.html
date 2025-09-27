@@ -26,8 +26,10 @@
         
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto; /* ブロック幅を中央に */
             padding: 0 20px;
+            text-align: center; /* 中のテキストを中央に */
+            display: block;   
         }
         
         h1 {
@@ -326,13 +328,15 @@
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0px;
+            
         }
         
         .guide-layout-full-width {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            
         }
 
         .guide-header {
@@ -525,6 +529,27 @@
         .sidebar-section:last-child {
             margin-bottom: 0;
         }
+
+        .world-item {
+            display: flex;          /* 横並びにする */
+            align-items: flex-start;    /* 上下をそろえる */
+            gap: 20px;              /* 画像と文章の間の余白 */
+            margin-bottom: 30px;    /* 下に余白を追加 */
+        }
+
+        .world-item img {
+            flex-shrink: 0;         /* 画像が縮まないように */
+            border-radius: 8px;     /* お好みで角丸に */
+        }
+
+        .world-item p {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0;              /* デフォルト余白を消す */
+        }
+        .mannnaka{
+            text-align: center;
+        }
         
         @media (max-width: 768px) {
             h1 {
@@ -657,7 +682,6 @@
                 </div>
                 
                 <div class="quick-links">
-                    <h3></h3>
                     <div class="link-grid">
                         <div class="link-card">
                             <h4>サーバーのガイドはこちら</h4>
@@ -674,16 +698,14 @@
                 </div>
             </div>
             
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
+            <div class="sidebar sidebar-section">
+                <h3>ページ</h3>
+                <ul>
+                    <li><a href="#" onclick="showPage('top')">トップページ</a></li>
+                    <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
+                    <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+                    <li><a href="#" onclick="showPage('news')">最新情報</a></li>
+                </ul>
             </div>
         </div>
     </main>
@@ -697,8 +719,20 @@
             <div class="guide-main">
                 <h2 id="basic">サーバー・ワールド一覧</h2>
                 <p style="font-family: 'Arial', sans-serif; font-size: 30px;">メインワールド</p>
-                <p>建築をしたり、冒険をしたりなど生活の拠点となるワールドです</p>
+            <div class="world-item">
                 <img src="life.png" alt="画像の説明" width="300" height="200">
+                <p>サーバーの中心となるワールドです。建築・冒険・交流、すべてのプレイヤーが集う場所。
+                    幻想的な風景が広がる世界を舞台に仲間と拠点を築き、街や集落を発展させるもよし、未知の場所を探索するもよし。
+                    土地保護で建築は安心して楽しめるため、自分だけの居場所を大切にしながら、サバイバルの冒険心も味わえます。
+                    
+                </p>
+            </div>
+
+
+                <h3>PVPワールドなどイベントワールド作成途中!お楽しみに!</h3>
+
+
+            
                 <h2 id="commands">基本コマンド</h2>
                 <div class="command-list">
                     <div class="command-item">
@@ -718,6 +752,9 @@
                         <span>他のプレイヤーにテレポート申請</span>
                     </div>
                 </div>
+
+
+
 
                 <h2 id="protection">土地保護</h2>
                 <p>あなたの建築物を他のプレイヤーから守るために、土地保護機能を使用できます。</p>
@@ -855,11 +892,8 @@
             <div class="guide-main">
                 <h2 id="recent-news">最新のお知らせ</h2>
                 
-                <h3>つぶ鯖オープン！（2024.12.01）</h3>
+                <h3>つぶ鯖オープン！</h3>
                 <p>新しいMinecraftサーバー「つぶ鯖」がオープンしました。特別なバイオームの世界で新しい生活を始めませんか？</p>
-                
-                <h3>ガイドページを公開（2024.12.01）</h3>
-                <p>プレイヤーガイドページを公開しました。基本的な遊び方やコマンドについて詳しく説明しています。</p>
 
                 <h2 id="events">イベント情報</h2>
                 <p>現在開催中のイベントはありません。</p>
@@ -867,7 +901,7 @@
 
                 <h2 id="updates">アップデート履歴</h2>
                 
-                <h3>v1.0.0 - サーバー公開（2024.12.01）</h3>
+                <h3>v1.0.0 - サーバー公開</h3>
                 <ul>
                     <li>基本的なサーバー機能を実装</li>
                     <li>特別バイオームの追加</li>
@@ -906,7 +940,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Tsubusaba Server. All rights reserved.</p>
+            <p>&copy; 2025 Tsubusaba. All rights reserved.</p>
         </div>
     </footer>
 
@@ -941,6 +975,66 @@
                     block: 'start'
                 });
             }
+        }
+
+                function copyToClipboard(text, button) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showCopySuccess(button);
+                }).catch(function(err) {
+                    fallbackCopyTextToClipboard(text, button);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text, button);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text, button) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess(button);
+                } else {
+                    showCopyError(button);
+                }
+            } catch (err) {
+                showCopyError(button);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess(button) {
+            button.classList.add('copied');
+            const originalText = button.innerHTML;
+            button.innerHTML = '✓';
+            setTimeout(function() {
+                button.classList.remove('copied');
+                button.innerHTML = originalText;
+            }, 1500);
+        }
+
+        function showCopyError(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '✗';
+            button.style.color = 'red';
+            
+            setTimeout(function() {
+                button.innerHTML = originalText;
+                button.style.color = '';
+            }, 1500);
         }
     </script>
 </body>
