@@ -388,8 +388,9 @@
             color: #111;
             font-size: 1.5rem;
             font-weight: bold;
-            margin: 30px 0 15px 0;
+            margin: 20px 0 4px 0; /* 上を少し減らして、下も8pxくらいに */
         }
+
         
         .guide-main h4 {
             color: #111;
@@ -466,8 +467,8 @@
         }
         
         .command-item code {
-            background-color: #333;
-            color: #00ff00;
+            background-color: transparent;  /* 背景なし */
+            color: #111;                    /* 黒文字 */
             padding: 5px 10px;
             border-radius: 4px;
             font-family: monospace;
@@ -478,7 +479,71 @@
         .command-item span {
             color: #444;
         }
-        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .command-table th, 
+        .command-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .command-table th {
+            background-color: #ddd;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .command-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .command-table td:first-child {
+            font-family: monospace;
+            min-width: 200px;
+            color: #111;
+        }
+        .shop-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .shop-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .shop-card.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .shop-card-image img {
+            border-radius: 10px;
+        }
+
+        .shop-card-text h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .shop-card-text p {
+            margin: 0.5em 0 0;
+            line-height: 1.5;
+        }
+
         .sidebar {
             background-color: #eeeeee;
             padding: 20px;
@@ -531,15 +596,15 @@
         }
 
         .world-item {
-            display: flex;          /* 横並びにする */
-            align-items: flex-start;    /* 上下をそろえる */
-            gap: 20px;              /* 画像と文章の間の余白 */
-            margin-bottom: 30px;    /* 下に余白を追加 */
+            display: flex;
+            align-items: flex-start; /* 上揃え */
+            gap: 20px; /* 画像と文章の間に余白 */
+            margin-bottom: 30px; /* 次のワールドとの間隔 */
         }
 
         .world-item img {
-            flex-shrink: 0;         /* 画像が縮まないように */
-            border-radius: 8px;     /* お好みで角丸に */
+            flex-shrink: 0; /* 画像が小さく潰れないように固定 */
+            border-radius: 8px; /* 角丸はお好み */
         }
 
         .world-item p {
@@ -549,6 +614,17 @@
         }
         .mannnaka{
             text-align: center;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            width: 1100px;
+            height: 550px;
+            max-width: 100%;
         }
         
         @media (max-width: 768px) {
@@ -685,7 +761,7 @@
                     <div class="link-grid">
                         <div class="link-card">
                             <h4>サーバーのガイドはこちら</h4>
-                            <p>基本的な遊び方やコマンドについて詳しく説明しています。</p>
+                            <p>基本的な遊び方やコマンドについて説明しています。</p>
                             <a href="#" onclick="showPage('guide')" class="link-button">ガイドを見る</a>
                         </div>
                         
@@ -724,55 +800,317 @@
                 <p>サーバーの中心となるワールドです。建築・冒険・交流、すべてのプレイヤーが集う場所。
                     幻想的な風景が広がる世界を舞台に仲間と拠点を築き、街や集落を発展させるもよし、未知の場所を探索するもよし。
                     土地保護で建築は安心して楽しめるため、自分だけの居場所を大切にしながら、サバイバルの冒険心も味わえます。
-                    
+                    /mainで移動可能。
                 </p>
             </div>
-
-
-                <h3>PVPワールドなどイベントワールド作成途中!お楽しみに!</h3>
-
-
+            <!-- 資源ワールド -->
+            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">資源ワールド</p>
+            <div class="world-item">
+                <img src="resource.png" alt="資源ワールド画像" width="300" height="200">
+                <p>
+                    資源採取専用のワールドです。鉱石や木材などの資源を自由に採掘・収集できます。
+                    このワールドは定期的にリセットされるため、常に新しい環境で冒険や資源集めを楽しめます。
+                    建築には不向きですが、メインワールドでの活動を支える重要な場所となっています。
+                    /resで移動可能。
+                </p>
+            </div>
+            <h2 id="post-join-guide">参加後のガイド</h2>
+            <div class="world-item">
+                <img src="sontyou.png" alt="初期配布画像" width="300" height="200">
+                <p>まずはじめに、村長さんに話しかけて初心者キットをもらいましょう。<br>
+                    キットには生活に役立つアイテムが入っています。キットのアイテムで使用できる機能は以下の通りです。<br>
+                    ・<strong>コンパス</strong>：左クリックでサーバーのメインメニューを開きます<br>
+                    ・<strong>紙</strong>：右クリックで土地の情報を確認できます。<br>
+                    ・<strong>金のシャベル</strong>：土地保護の範囲選択に使用します。→<a href="#protection">土地保護の方法はこちら</a><br>
+                    ・<strong>金の斧</strong>：右クリックでコマンドいらずでsethomeできます。<br>
+                </p>
+            </div>
+            <div class="world-item">
+                <img src="syokugyou.png" alt="職業画像" width="300" height="200">
+                <p>次に、メインメニューで職業選択をクリック（もしくは/jobs join）で職業選択画面を開いて職業に就きましょう。<br>
+                    職業に就くことでお金を稼いだり、特別なアイテムを作成したりできます。<br>
+                    どの職業も無料でいつでも変更可能です。自分のプレイスタイルに合った職業を選び、サバイバル生活をより充実させましょう。
+                </p>
+            </div>
+            <div class="world-item">
+                <img src="adminshop.png" alt="ショップ画像" width="300" height="200">
+                <p>また、初期地にいる運営ショップに話しかけて便利なアイテムを買いましょう。<br>
+                    運営ショップでは、サバイバル生活に少し役立つアイテムを手に入れることができます。<br>
+                    例えば、食料や便利な道具、基礎の建築資材などが揃っています。<br>
+                    運営ショップ以外にも、プレイヤーショップを活用して他のプレイヤーと取引を楽しむこともできます。<a href="#shop-guide">詳細はショップタブへ</a><br>
+                </p>
+            </div>
+            <div class="world-item">
+                <img src="let'sgo.png" alt="スタート画像" width="300" height="200">
+                <p>
+                    <span style="font-size:30px;">さあ、出発しよう</span><br>
+                    これで基本的な準備は完了です。<br>
+                    あとは自分のペースでサバイバル生活を楽しみましょう。<br>
+                    グラップラーで縦横無尽な移動と冒険を楽しんだり、<br>
+                    友達と一緒に大きな建築プロジェクトに挑戦したり、<br>
+                    自分だけの遊び方を見つけてください。<br>
+                    つぶ鯖での新しい生活が素晴らしいものになりますように！
+                </p>
+            </div>
             
-                <h2 id="commands">基本コマンド</h2>
+            <h2 id="commands">基本コマンド</h2>
                 <div class="command-list">
                     <div class="command-item">
-                        <code>/spawn</code>
-                        <span>スポーン地点に戻る</span>
+                        <code>/menu</code>
+                        <span>サーバーのメインメニューを開きます</span>
                     </div>
                     <div class="command-item">
-                        <code>/home</code>
-                        <span>自分のホーム地点に戻る</span>
+                        <code>/gmenu</code>
+                        <span>土地のメニューを開きます</span>
                     </div>
                     <div class="command-item">
                         <code>/sethome</code>
-                        <span>現在地をホーム地点に設定</span>
+                        <span>ホームを設定します</span>
                     </div>
                     <div class="command-item">
-                        <code>/tpa [プレイヤー名]</code>
-                        <span>他のプレイヤーにテレポート申請</span>
+                        <code>/thome</code>
+                        <span>ホーム一覧メニューを開きます</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/pay プレイヤー 金額</code>
+                        <span>プレイヤーに送金します</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/pshop</code>
+                        <span>プレイヤーショップを開きます</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/jobs join</code>
+                        <span>職業に就きます</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/spawn</code>
+                        <span>メインワールドのスポーン地点に戻ります</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/tpa プレイヤー</code>
+                        <span>プレイヤーにtp申請を送ります</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/back</code>
+                        <span>死亡場所にtpします</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/main</code>
+                        <span>メインワールドにtpします</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/res</code>
+                        <span>資源ワールドにtpします</span>
                     </div>
                 </div>
 
-
-
-
                 <h2 id="protection">土地保護</h2>
-                <p>あなたの建築物を他のプレイヤーから守るために、土地保護機能を使用できます。</p>
-                <h3>保護の作成手順</h3>
+                <p>
+                    つぶ鯖では <strong>GriefPrevention</strong>プラグインを導入しており、建築や自分の大切なものを安全に守ることができます！
+                    他のプレイヤーによる荒らしを心配する必要はありません。自分や仲間との空間を自由に作り上げましょう！
+                </p>
+                <p style="font-family: 'Arial', sans-serif; font-size: 30px;">土地を保護するとどうなるの？</p>
                 <ul>
-                    <li>保護したい範囲の対角線上の2点を選択</li>
-                    <li>コマンドを使用して保護を作成</li>
-                    <li>保護範囲内では他のプレイヤーは建築・破壊不可</li>
-                    <img src="2toppage.png" alt="画像の説明" width="300" height="200">
+                    <li><strong>建築物の保護</strong> – 自分の保護したエリアでは、他のプレイヤーはブロックを壊したり置いたりできません。</li>
+                    <li><strong>チェストの安全</strong> – 保護範囲内のチェストやドアも勝手に操作されません。</li>
+                    <li><strong>柔軟な設定</strong> – 友達だけを追加して一緒に使うことも可能。協力プレイも安心です。</li>
+                    <li><strong>荒らし対策</strong> – 土地を保護することで、いたずらや荒らし行為を未然に防止します。</li>
+                    <li><strong>安心したサバイバル生活</strong> – 自分の拠点や建築物を長期間安心して維持できます。</li>
                 </ul>
+                <h3>土地保護の作成手順</h3>
+                <div class="world-item">
+                <img src="totihogo.png" alt="土地保護画像" width="500" height="350">
+                    <p>
+                        1. <strong>保護範囲の設定</strong><br>
+                        金のシャベルを持って、保護したいエリアの対角線上の2点をそれぞれ右クリック/タップで選択します。<br>
+                        2. <strong>土地の管理</strong><br>
+                        範囲を設定したあと、/gmenuで土地のメニューを開いて保護の設定などを行えます。詳細は動画を確認<br>
+                        3. <strong>土地の情報</strong><br>
+                        紙を持って保護した土地に右クリックで土地の情報を見れます<br>
+                        4. <strong>土地の設定について</strong><br>
+                        下の動画を参考に土地の管理や保護ブロックの購入、友達の追加などを行いましょう。
+                    </p>
+                </div>
+                <h3>土地のチュートリアル動画</h3>
+                <div class="video-container">
+                    <video controls>
+                        <source src="土地保護チュートリアル3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h3>フラグ・権限一覧 | ◯ = フラグ ▢ = 権限</h3>
+                <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>フラグ・権限</th>
+                        <th>説明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>◯PvP</td>
+                        <td>土地内でのPvPの許可を設定できます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯モブのスポーン防止</td>
+                        <td>土地内でのすべてのモブのスポーンを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯敵モブのスポーン防止</td>
+                        <td>土地内での敵対モブのスポーンを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯敵モブ防止</td>
+                        <td>土地内での敵対モブのスポーンと敵対モブによる攻撃を防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯畑荒らし防止</td>
+                        <td>土地内で農作物が踏み荒らされるのを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯ウィザーダメージ許可</td>
+                        <td>土地内でのウィザーによるダメージの許可を設定できます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯火のブロックダメージ防止</td>
+                        <td>土地内でブロックが火のダメージを受けるのを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯火の延焼防止</td>
+                        <td>土地内での火の延焼を防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯火の延焼防止</td>
+                        <td>土地内での火の延焼を防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯落下ダメージ防止</td>
+                        <td>土地内でプレイヤーが落下ダメージを受けるのを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯液体の流れ防止</td>
+                        <td>土地内で液体（水など）が流れるのを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯氷の生成防止</td>
+                        <td>土地内での氷の生成を防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯葉の自然消滅防止</td>
+                        <td>土地内での葉の自然消滅を防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>◯雪の生成防止</td>
+                        <td>土地内で雪がつもるのを防ぎます。</td>
+                    </tr>
+                    <tr>
+                        <td>▢土地の訪問者</td>
+                        <td>土地内でレバーやドア、フェンスゲートなどの操作ができます。</td>
+                    </tr>
+                    <tr>
+                        <td>▢土地の利用者</td>
+                        <td>訪問者の操作に加え、チェスト・樽・かまどなどの操作ができます。</td>
+                    </tr>
+                    <tr>
+                        <td>▢土地の建築者</td>
+                        <td>利用者の操作に加え、ブロックの設置や破壊などの操作ができます。</td>
+                    </tr>
+                </tbody>
+                </table>
+                <h2 id="shop-guide">ショップ</h2>
+                <p>
+                    つぶ鯖では、運営ショップとプレイヤーショップの2種類のショップがあります。<br>
+                    運営ショップでは生活に役立つアイテムを購入でき、プレイヤーショップでは他のプレイヤーが出品しているアイテムを購入したり、自分のアイテムを販売したりできます。<br>
+                    どちらのショップもサバイバル生活をより便利に、楽しくするための重要な要素です。<br>
+                    以下でそれぞれのショップの利用方法について説明します。
+                </p>    
+                <div class="shop-cards">
 
-                <h2 id="help">困ったときは</h2>
-                <ul>
-                    <li>運営メンバーにお気軽にお声がけください</li>
-                    <li>他のプレイヤーと交流し、情報を共有しましょう</li>
-                </ul>
+                    <!-- 購入カード -->
+                    <div class="shop-card">
+                        <div class="shop-card-image">
+                            <img src="playershop.png" alt="プレイヤーショップ画像" width="350" height="200">
+                        </div>
+                        <div class="shop-card-text">
+                            <h3>プレイヤーショップでの購入</h3>
+                            <p>
+                                /pshopでショップを開き、「商品を見る」で他のプレイヤーが出品しているアイテムを閲覧・購入できます。<br>
+                                取引はサーバー内通貨で行われ、売買を通じて他のプレイヤーと交流できます。
+                            </p>
+                        </div>
+                    </div>
+
+                <div class="shop-card" style="text-align:center; margin-top:30px;">
+                    <div class="shop-card-sections" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+                        <div class="shop-card-section" style="text-align:center; max-width:500px;">
+                            <h3>アイテムの出品</h3>
+                            <img src="shopsell.png" alt="アイテム出品手順画像" width="500" height="60">
+                            <p>
+                                出品したいアイテムを手に持って<br>
+                                <strong>"/pshop(s) sell 個数 価格"</strong><br>
+                                でアイテムを出品できます。
+                            </p>
+                        </div>
+
+                        <div class="shop-card-section" style="text-align:center; max-width:500px;">
+                            <img src="sellsucces.png" alt="出品成功画像" width="500" height="80">
+                            <p>
+                                出品が成功するとメッセージが表示されます。<br>
+                                /pshop → 「自分のショップを見る」で出品管理可能。<br>
+                                アイテムが売れると自動でお金が口座に入ります。<br>
+                                不要になった出品は「出品をキャンセル」でキャンセルできます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-card reverse">
+                    <div class="shop-card-image">
+                        <img src="adminshop2.png" alt="運営ショップ画像" width="350" height="200">
+                    </div>
+                    <div class="shop-card-text">
+                        <h3>運営ショップでの購入</h3>
+                        <p>
+                            初期地にいる運営ショップNPCに話しかけて便利なアイテムを買いましょう。<br>
+                            運営ショップでは、建材は固定ショップと週替りの特売ショップ、その他食料や便利な道具などが揃っています。<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="shop-card reverse">
+                    <div class="shop-card-image">
+                        <img src="adminshop3.png" alt="運営買取ショップ画像" width="350" height="200">
+                    </div>
+                    <div class="shop-card-text">
+                        <h3>運営買取ショップ</h3>
+                        <p>
+                            初期地にいる買取ショップNPCに話しかけると、集めたアイテムを売ることができます。<br>
+                            買取価格はアイテムごとに決まっておりまとめて売ることも可能です。<br>
+                            買い取るアイテムは<strong>定期的に変更</strong>されるため、こまめにチェックしてお得に売りましょう。
+                        </p>
+                    </div>
+                </div>
+                    <h2 id="dokuji">独自機能</h2>
+                    <p>
+                        他のサーバーにはない独自の機能をいくつか導入しています。<br>
+                        これらの機能はサバイバル生活をより便利に、楽しくするために設計されています。<br>
+                        以下で主な独自機能について説明します。
+                    </p>
+                    <h3 style="font-family: 'Arial', sans-serif; font-size: 30px;">壁登り</h3>
+                    <div class="video-container">
+                        <video controls width="550" height="350">
+                            <source src="壁登り.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p>
+                        メインハンドに何も持たない状態で壁にくっついて右クリックすると壁登りができます。<br>
+                        スタミナを消費しますが、壁に向かってジャンプ長押しで壁を登り続けられます。<br>
+                        高い崖や建物の上に簡単に登れるため、探索や建築がより便利になります。<br>
+                        サバイバル生活でちょっとした役に立つ機能です。<br>
+                        ぜひ活用してみてください。
+                    </p>
+                </div>
             </div>
-            
+        </div>
             <div class="sidebar">
                 <div class="sidebar-section">
                     <h3>ページ</h3>
@@ -787,13 +1125,11 @@
                 <div class="sidebar-section">
                     <h3>このページの項目</h3>
                     <ul>
-                        <li><a href="#basic" onclick="scrollToSection('basic')">基本</a></li>
-                        <li><a href="#join" onclick="scrollToSection('join')">参加方法</a></li>
-                        <li><a href="#server-info" onclick="scrollToSection('server-info')">サーバーについて</a></li>
-                        <li><a href="#rules-summary" onclick="scrollToSection('rules-summary')">ルール</a></li>
+                        <li><a href="#basic" onclick="scrollToSection('basic')">サーバー・ワールド一覧</a></li>
+                        <li><a href="#post-join-guide" onclick="scrollToSection('post-join-guide')">参加後のガイド</a></li>
                         <li><a href="#commands" onclick="scrollToSection('commands')">基本コマンド</a></li>
                         <li><a href="#protection" onclick="scrollToSection('protection')">土地保護</a></li>
-                        <li><a href="#help" onclick="scrollToSection('help')">困ったときは</a></li>
+                        <li><a href="#shop-guide" onclick="scrollToSection('shop-guide')">ショップ</a></li>
                     </ul>
                 </div>
             </div>
@@ -892,8 +1228,11 @@
             <div class="guide-main">
                 <h2 id="recent-news">最新のお知らせ</h2>
                 
-                <h3>つぶ鯖オープン！</h3>
+                <h3>つぶ鯖オープン！（2024.12.01）</h3>
                 <p>新しいMinecraftサーバー「つぶ鯖」がオープンしました。特別なバイオームの世界で新しい生活を始めませんか？</p>
+                
+                <h3>ガイドページを公開（2024.12.01）</h3>
+                <p>プレイヤーガイドページを公開しました。基本的な遊び方やコマンドについて詳しく説明しています。</p>
 
                 <h2 id="events">イベント情報</h2>
                 <p>現在開催中のイベントはありません。</p>
@@ -901,7 +1240,7 @@
 
                 <h2 id="updates">アップデート履歴</h2>
                 
-                <h3>v1.0.0 - サーバー公開</h3>
+                <h3>v1.0.0 - サーバー公開（2024.12.01）</h3>
                 <ul>
                     <li>基本的なサーバー機能を実装</li>
                     <li>特別バイオームの追加</li>
@@ -978,13 +1317,17 @@
         }
 
                 function copyToClipboard(text, button) {
+            // クリップボードAPIをサポートしているかチェック
             if (navigator.clipboard && window.isSecureContext) {
+                // 非同期でクリップボードにコピー
                 navigator.clipboard.writeText(text).then(function() {
                     showCopySuccess(button);
                 }).catch(function(err) {
+                    // エラーの場合はフォールバック処理
                     fallbackCopyTextToClipboard(text, button);
                 });
             } else {
+                // フォールバック処理（古いブラウザ対応）
                 fallbackCopyTextToClipboard(text, button);
             }
         }
@@ -993,6 +1336,7 @@
             const textArea = document.createElement("textarea");
             textArea.value = text;
             
+            // 要素を見えないようにスタイル設定
             textArea.style.top = "0";
             textArea.style.left = "0";
             textArea.style.position = "fixed";
@@ -1017,9 +1361,12 @@
         }
 
         function showCopySuccess(button) {
+            // ボタンのスタイルを変更してコピー完了を示す
             button.classList.add('copied');
             const originalText = button.innerHTML;
             button.innerHTML = '✓';
+            
+            // 1.5秒後に元のスタイルに戻す
             setTimeout(function() {
                 button.classList.remove('copied');
                 button.innerHTML = originalText;
@@ -1027,6 +1374,7 @@
         }
 
         function showCopyError(button) {
+            // エラーの場合の処理（オプション）
             const originalText = button.innerHTML;
             button.innerHTML = '✗';
             button.style.color = 'red';
