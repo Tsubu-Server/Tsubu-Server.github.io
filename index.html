@@ -594,23 +594,25 @@
         .sidebar-section:last-child {
             margin-bottom: 0;
         }
-
         .world-item {
             display: flex;
             align-items: flex-start; /* 上揃え */
-            gap: 20px; /* 画像と文章の間に余白 */
-            margin-bottom: 30px; /* 次のワールドとの間隔 */
+            gap: 20px;              /* 動画/画像と文章の間に余白 */
+            margin-bottom: 30px;    /* 次のブロックとの間隔 */
         }
 
-        .world-item img {
-            flex-shrink: 0; /* 画像が小さく潰れないように固定 */
-            border-radius: 8px; /* 角丸はお好み */
+        .world-item img,
+        .world-item video {
+            flex-shrink: 0;         /* 潰れないように固定 */
+            border-radius: 8px;     /* 角丸 */
+            max-width: 500px;       /* お好みで幅を制限 */
+            height: auto;           /* 縦横比を維持 */
         }
 
         .world-item p {
             font-size: 1.1rem;
             color: #333;
-            margin: 0;              /* デフォルト余白を消す */
+            margin: 0;
         }
         .mannnaka{
             text-align: center;
@@ -808,7 +810,8 @@
             <div class="world-item">
                 <img src="resource.png" alt="資源ワールド画像" width="300" height="200">
                 <p>
-                    資源採取専用のワールドです。鉱石や木材などの資源を自由に採掘・収集できます。
+                    資源採取とダンジョン探索がメインのワールドです。鉱石や木材などの資源を自由に採掘・収集できます。
+                    低確率で出現する強化モブに挑戦して、特別なアイテムや大量の経験値を獲得することもできます！
                     このワールドは定期的にリセットされるため、常に新しい環境で冒険や資源集めを楽しめます。
                     建築には不向きですが、メインワールドでの活動を支える重要な場所となっています。
                     /resで移動可能。
@@ -1095,7 +1098,48 @@
                     </div>
                 </div>
             </div>
-        </div>
+                <h2 id="unique-features">独自機能</h2>
+                <p>つぶ鯖では通常のサバイバル生活をより楽しく、便利にするための独自機能をいくつか実装しています。これらの機能を活用して、自分だけのプレイスタイルを見つけましょう！</p>
+                <h3>壁登り</h3>
+                <div class="world-item">
+                    <video controls width="500" height="350">
+                        <source src="壁登り.mp4" type="video/mp4">
+                    </video>
+                    <p>
+                        壁登り機能を使うと、特定のブロックを登ることができます。<br>
+                        例えば、土や石などのブロックを登ることができ、建築や探索の幅が広がります。<br>
+                        メインハンドに何も持たない状態で、壁に向かって右クリックで登れます。スタミナを消費するため、使いすぎには注意しましょう。<br>
+                        登った状態でジャンプ長押しで上に登れて、しゃがみで降りれます。壁から離れると解除できます。
+                    </p>
+                </div>
+                <h3>グラップラー</h3>
+                <div class="world-item">
+                    <video controls width="500" height="350">
+                        <source src="グラップラー.mp4" type="video/mp4">
+                    </video>
+                    <p>
+                        グラップラーは、遠くの場所に素早く移動できる便利なアイテムです。<br>
+                        メインハンドの場合は左クリックで、オフハンドの場合は右クリックで使用できます。<br>
+                        ワイヤーがでた状態で左クリック（オフハンドは右クリック）もしくはアイテム持ち替えで解除できます。<br>
+                        落下ダメージはあるので高い場所からの移動には注意しましょう。
+                    </p>
+                </div>
+                <h3>強化モブ</h3>
+                <div class="world-item">
+                    <img src="inf.png" alt="強化モブ画像" width="300" height="100">
+                    <p>
+                        資源ワールドでは、低確率で強化されたモブが出現します。<br>
+                        強化モブは通常のモブよりも強力で、倒すのは一筋縄ではいきませんが、倒すと特別なアイテムや大量の経験値を獲得できます。<br>
+                        強化モブに挑戦して、サバイバル生活にスリルを加えましょう！<br>
+                        強化モブが出現したらメッセージが表示されるので、見逃さないようにしましょう。
+                    </p>
+                </div>
+                <h2 id="help-guide">困ったときは</h2>
+                <p>困ったときは、Discordの#管理班への連絡で相談や<br>
+                   サーバー内で/tell Donchanikiで直接質問することができます。<br>
+                   なにか困ったことがあれば気軽に相談してください！<br>
+                </p>
+                </div>
             <div class="sidebar">
                 <div class="sidebar-section">
                     <h3>ページ</h3>
@@ -1115,6 +1159,8 @@
                         <li><a href="#commands" onclick="scrollToSection('commands')">基本コマンド</a></li>
                         <li><a href="#protection" onclick="scrollToSection('protection')">土地保護</a></li>
                         <li><a href="#shop-guide" onclick="scrollToSection('shop-guide')">ショップ</a></li>
+                        <li><a href="#unique-features" onclick="scrollToSection('unique-features')">独自機能</a></li>
+                        <li><a href="#help-guide" onclick="scrollToSection('help-guide')">困ったときは</a></li>
                     </ul>
                 </div>
             </div>
