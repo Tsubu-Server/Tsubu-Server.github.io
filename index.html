@@ -791,7 +791,9 @@
     <main id="guide-page" class="page">
         <div class="guide-layout">
             <div class="guide-header">
-                <div class="guide-header-image">写真をここに追加予定</div>
+                <div class="guide-header-image">写真を追加予定</div>
+                <h1>サーバーガイド</h1>
+                <p>つぶ鯖の基本的な遊び方やコマンドについて説明します。<br>初心者の方も安心して始められるよう、丁寧に解説しています。</p>
             </div>
             
             <div class="guide-main">
@@ -900,11 +902,19 @@
                     </div>
                     <div class="command-item">
                         <code>/main</code>
-                        <span>メインワールドにtpします</span>
+                        <span><strong>メインワールド</strong>に移動します</span>
                     </div>
                     <div class="command-item">
                         <code>/res</code>
                         <span>資源ワールドにtpします</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/server trap</code>
+                        <span>トラップサーバーに移動します</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/server main</code>
+                        <span><strong>メインサーバー</strong>に移動します</span>
                     </div>
                 </div>
 
@@ -1170,56 +1180,102 @@
     <main id="rules-page" class="page">
         <div class="guide-layout">
             <div class="guide-header">
-                <div class="guide-header-image">写真をここに追加予定</div>
+                <div class="guide-header-image">写真を追加予定</div>
                 <h1>サーバールール</h1>
                 <p>つぶ鯖でのルールとマナーについて説明します。<br>
                 すべてのプレイヤーが楽しくプレイできるように、必ずお読みください。</p>
             </div>
             
             <div class="guide-main">
-                <h2 id="basic-rules">基本ルール</h2>
+                <h2 id="discord-rules">📌 Discordルール</h2>
                 
-                <h3>1. フレンドリーな環境を維持する</h3>
-                <p>すべてのプレイヤーが楽しめる環境を作るため、親切で友好的な態度を心がけてください。</p>
-                
-                <h3>2. 他のプレイヤーに嫌がらせをしない</h3>
-                <p>意図的な妨害行為、暴言、つきまといなど、他のプレイヤーを不快にさせる行為は禁止です。</p>
-                
-                <h3>3. ハッキングやチート、不具合の悪用をしない</h3>
-                <p>外部ツールの使用や、ゲームの不具合を利用した不正行為は禁止です。</p>
-                
-                <h3>4. ゲームバランスを壊さない</h3>
-                <p>過度なトラップ作成や、サーバーに負荷をかける行為は控えてください。</p>
-                
-                <h3>5. 正規のアカウントを使用する</h3>
-                <p>海賊版や不正なアカウントでの参加は禁止です。</p>
-
-                <h2 id="building-rules">建築に関するルール</h2>
+                <h3>1. チャットマナー</h3>
                 <ul>
-                    <li>他のプレイヤーの建築物の近くに建築する際は、適切な距離を保ってください</li>
-                    <li>周囲の環境や他の建築物との調和を考えて建築してください</li>
+                    <li>他人を不快にさせる発言をしない</li>
+                    <li>スパム（連投・連続通知・意味のない文字列など）をしない</li>
+                </ul>
+                
+                <h3>2. 宣伝・勧誘</h3>
+                <ul>
+                    <li>他サーバーの無断宣伝をしない</li>
+                    <li>Discord招待リンクの貼付けは運営の許可を得てから</li>
                 </ul>
 
-                <h2 id="chat-rules">チャットに関するルール</h2>
+                <h2 id="game-rules">📌 ゲーム内ルール</h2>
+                
+                <h3>1. プレイマナー</h3>
+                
+                <h4>他プレイヤーへの配慮</h4>
+                <p>他の人が楽しくプレイできるよう、迷惑になる行動は控えましょう</p>
+                
+                <h4>建築物・拠点など</h4>
+                <p>土地を保護して建築を守りましょう。<br>
+                保護されていない場所でも、悪質な破壊などは処罰対象です。</p>
+                
+                <h4>会話・交流のマナー</h4>
                 <ul>
-                    <li>暴言や不適切な表現は避け、丁寧な言葉遣いを心がけてください</li>
-                    <li>同じメッセージの連投や、無意味な文字の羅列は禁止です</li>
-                    <li>他のサーバーやサービスの宣伝は控えてください</li>
+                    <li>スパム・連投は禁止（同じ内容を5回以上流さない）</li>
+                    <li>他人を不快にする煽り・荒らし行為をしない</li>
                 </ul>
+
+                <h3>2. 経済・取引ルール</h3>
+                
+                <h4>安心できる取引のために</h4>
+                <p>プレイヤー間の取引では、お互いに約束を守りましょう。<br>
+                虚偽の商品説明などの詐欺行為は禁止です。<br>
+                また、過度な価格操作や買い占めはゲームバランスを壊すため控えてください。</p>
+                
+                <h4>トラブルが起きたら</h4>
+                <p>万が一トラブルになった場合は、<strong>/reportplayer</strong> または <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">Discord #📥管理班への連絡</a> までお知らせください。<br>
+                状況に応じてスタッフが確認・対応します。</p>
+
+                <h3>3. 不正・外部ツール</h3>
+                
+                <h4>禁止されているもの</h4>
+                <ul>
+                    <li>チートクライアント（Fly, KillAura, X-Ray など）</li>
+                    <li>自動クリック（マクロ）、連打ツール、外部スクリプト</li>
+                </ul>
+                
+                <h4>利用可能なもの</h4>
+                <p>サーバーが推奨するMOD（例：軽量化MOD, マップMOD など）<br>
+                その他のMODを使用したい場合は、運営へ確認をお願いします。</p>
+
+                <h3>4. ゲーム仕様の尊重</h3>
+                <ul>
+                    <li>バグの悪用（ブロック抜け、無限増殖など）は禁止です</li>
+                    <li>不具合や不自然な挙動を見つけた場合は、<strong>/reportbug</strong> または <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">Discord #📥管理班への連絡</a> までお知らせください</li>
+                    <li>サーバーに高負荷をかける行為（過度なレッドストーン回路、大量のエンティティなど）は控えてください</li>
+                </ul>
+
+                <h3>5. 土地・建築について</h3>
+                <p>長期間ログインがない場合、土地や建築物が整理される可能性があります</p>
+
+                <h3>6. 資源集めについて</h3>
+                <p><strong>メインワールド</strong>での大規模な資源採取（資源集めを目的とした露天掘り・森林伐採・ブランチマイニングなど）はご遠慮ください<br>
+                大量の資源を集めたい場合は、<strong>資源ワールド</strong>をご利用ください<br>
+                小規模な生活用の採掘や伐採はメインワールドでも問題ありません<br>
+                資源ワールドは定期的にリセットされるため、いつでも新しい資源を確保できます</p>
+
+                <h3>7. モブトラップ・装置について</h3>
+                <p><strong>メインワールド</strong>では、大規模なモブトラップや負荷の大きい装置の作成はご遠慮ください<br>
+                小規模な生活用（畑・家畜など）は問題ありません<br>
+                大規模な装置を作りたい場合は、<strong>トラップサーバー</strong>をご利用ください</p>
 
                 <h2 id="violations">違反行為について</h2>
                 <p>ルール違反が確認された場合、以下の処置が取られる場合があります：</p>
                 <ul>
                     <li><strong>警告</strong> - 軽微な違反に対して行われます</li>
                     <li><strong>一時的な利用停止</strong> - 繰り返しの違反や重大な違反に対して行われます</li>
-                    <li><strong>永久的な利用停止</strong> - 悪質な違反や改善が見られない場合に行われます</li>
+                    <li><strong>永久BAN</strong> - 悪質な違反や改善が見られない場合に行われます</li>
                 </ul>
 
                 <h2 id="reporting">報告方法</h2>
-                <p>ルール違反を発見した場合は、以下の方法で報告してください：</p>
+                <p>ルール違反やトラブルを発見した場合は、以下の方法で報告してください：</p>
                 <ul>
-                    <li>運営メンバーがオンラインの場合は、直接お声がけください</li>
-                    <li>違反行為の証拠となるスクリーンショットを保存してください</li>
+                    <li><strong>ゲーム内</strong>: <strong>/reportplayer</strong>（プレイヤー違反報告） | <strong>/reportbug</strong>（バグ報告）</li>
+                    <li><strong>Discord</strong>: <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">#📥管理班への連絡</a> チャンネルで報告</li>
+                    <li>違反行為の証拠となるスクリーンショットがあると対応がスムーズです</li>
                 </ul>
             </div>
             
@@ -1237,9 +1293,8 @@
                 <div class="sidebar-section">
                     <h3>このページの項目</h3>
                     <ul>
-                        <li><a href="#basic-rules" onclick="scrollToSection('basic-rules')">基本ルール</a></li>
-                        <li><a href="#building-rules" onclick="scrollToSection('building-rules')">建築に関するルール</a></li>
-                        <li><a href="#chat-rules" onclick="scrollToSection('chat-rules')">チャットに関するルール</a></li>
+                        <li><a href="#discord-rules" onclick="scrollToSection('discord-rules')">Discordルール</a></li>
+                        <li><a href="#game-rules" onclick="scrollToSection('game-rules')">ゲーム内ルール</a></li>
                         <li><a href="#violations" onclick="scrollToSection('violations')">違反行為について</a></li>
                         <li><a href="#reporting" onclick="scrollToSection('reporting')">報告方法</a></li>
                     </ul>
@@ -1251,7 +1306,7 @@
     <main id="news-page" class="page">
         <div class="guide-layout">
             <div class="guide-header">
-                <div class="guide-header-image">写真をここに追加予定</div>
+                <div class="guide-header-image">写真を追加予定</div>
                 <h1>最新情報</h1>
                 <p>つぶ鯖の最新情報やイベント情報をお知らせします。</p>
             </div>
