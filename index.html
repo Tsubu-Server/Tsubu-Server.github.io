@@ -747,7 +747,7 @@
                     <div class="connection-grid">
                         <div class="connection-card">
                             <h4>Java版</h4>
-                            <p>対応バージョン: 1.8.9 ～ 1.21.8</p>
+                            <p>対応バージョン: 1.8.9 ～ 1.21.9</p>
                             <p>IP: <span class="server-address">tsubusaba.ddo.jp</span><button class="copy-btn" onclick="copyToClipboard('tsubusaba.ddo.jp', this)" title="コピー">⧉</button></p>
                         </div>
                         
@@ -1308,31 +1308,19 @@
             <div class="guide-header">
                 <div class="guide-header-image">写真を追加予定</div>
                 <h1>最新情報</h1>
-                <p>つぶ鯖の最新情報やイベント情報をお知らせします。</p>
+                <p>つぶ鯖の最新情報やイベント情報をお知らせします。<br>
+                まだここには何もありませんが、今後更新していきます！
+                </p>
             </div>
             
             <div class="guide-main">
                 <h2 id="recent-news">最新のお知らせ</h2>
-                
-                <h3>つぶ鯖オープン！（2024.12.01）</h3>
-                <p>新しいMinecraftサーバー「つぶ鯖」がオープンしました。特別なバイオームの世界で新しい生活を始めませんか？</p>
-                
-                <h3>ガイドページを公開（2024.12.01）</h3>
-                <p>プレイヤーガイドページを公開しました。基本的な遊び方やコマンドについて詳しく説明しています。</p>
 
                 <h2 id="events">イベント情報</h2>
                 <p>現在開催中のイベントはありません。</p>
                 <p>今後、季節イベントや建築コンテストなど、様々なイベントを開催予定です。お楽しみに！</p>
 
                 <h2 id="updates">アップデート履歴</h2>
-                
-                <h3>v1.0.0 - サーバー公開（2024.12.01）</h3>
-                <ul>
-                    <li>基本的なサーバー機能を実装</li>
-                    <li>特別バイオームの追加</li>
-                    <li>土地保護システムの導入</li>
-                    <li>基本コマンドの設定</li>
-                </ul>
 
                 <h2 id="maintenance">メンテナンス予定</h2>
                 <p>現在、定期メンテナンスの予定はありません。</p>
@@ -1447,12 +1435,10 @@
         }
 
         function showCopySuccess(button) {
-            // ボタンのスタイルを変更してコピー完了を示す
             button.classList.add('copied');
             const originalText = button.innerHTML;
             button.innerHTML = '✓';
             
-            // 1.5秒後に元のスタイルに戻す
             setTimeout(function() {
                 button.classList.remove('copied');
                 button.innerHTML = originalText;
@@ -1460,7 +1446,6 @@
         }
 
         function showCopyError(button) {
-            // エラーの場合の処理（オプション）
             const originalText = button.innerHTML;
             button.innerHTML = '✗';
             button.style.color = 'red';
