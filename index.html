@@ -628,6 +628,33 @@
             height: 512px;
             max-width: 100%;
         }
+
+        .map-container {
+            width: 100%;
+            height: calc(100vh - 120px);
+            min-height: 700px;
+            border: none;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #map-page {
+            padding: 0;
+            margin: 0;
+        }
+
+        #map-page .guide-layout-full-width {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
         
         @media (max-width: 768px) {
             h1 {
@@ -715,6 +742,7 @@
             <li><a href="#" onclick="showPage('top')" class="active">トップページ</a></li>
             <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
             <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+            <li><a href="#" onclick="showPage('map')">マップ</a></li>
             <li><a href="#" onclick="showPage('news')">最新情報</a></li>
         </ul>
     </nav>
@@ -782,6 +810,7 @@
                     <li><a href="#" onclick="showPage('top')">トップページ</a></li>
                     <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
                     <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+                    <li><a href="#" onclick="showPage('map')">マップ</a></li>
                     <li><a href="#" onclick="showPage('news')">最新情報</a></li>
                 </ul>
             </div>
@@ -801,9 +830,12 @@
                 <p style="font-family: 'Arial', sans-serif; font-size: 30px;">メインワールド</p>
             <div class="world-item">
                 <img src="life.png" alt="画像の説明" width="300" height="200">
-                <p>サーバーの中心となるワールドです。建築・冒険・交流、すべてのプレイヤーが集う場所。
-                    幻想的な風景が広がる世界を舞台に仲間と拠点を築き、街や集落を発展させるもよし、未知の場所を探索するもよし。
-                    土地保護で建築は安心して楽しめるため、自分だけの居場所を大切にしながら、サバイバルの冒険心も味わえます。
+                <p>
+                    つぶ鯖のメインワールドです。ここではサバイバル生活を楽しむことができます。<br>
+                    広大な土地には様々なバイオームが広がっており、建築や農業、冒険など多彩な活動が可能です。
+                    他のプレイヤーと交流したり、協力して大規模なプロジェクトに挑戦することもできます。<br>
+                    メインワールドは定期的にバックアップされており、安心して長期間のプレイが楽しめます。<br>
+                    つぶ鯖の中心地であり、最も活気のある場所です。ぜひここで新しい生活を始めてみてください！
                     /mainで移動可能。
                 </p>
             </div>
@@ -817,6 +849,16 @@
                     このワールドは定期的にリセットされるため、常に新しい環境で冒険や資源集めを楽しめます。
                     建築には不向きですが、メインワールドでの活動を支える重要な場所となっています。
                     /resで移動可能。
+                </p>
+            </div>
+            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">トラップワールド</p>
+            <div class="world-item">
+                <img src="trap.png" alt="トラップワールド画像" width="300" height="200">
+                <p>
+                    大規模な装置やトラップの建築に特化したワールドです。メインワールドとは異なり、自由に大規模な装置を作成できます。
+                    例えば、自動化された農場やモブトラップ、複雑なレッドストーン回路など、創造力を存分に発揮できる場所です。
+                    このワールドも定期的にリセットされるため、常に新しい環境で挑戦と創造を楽しめます。
+                    /trapで移動可能。
                 </p>
             </div>
             <h2 id="post-join-guide">参加後のガイド</h2>
@@ -902,19 +944,15 @@
                     </div>
                     <div class="command-item">
                         <code>/main</code>
-                        <span><strong>メインワールド</strong>に移動します</span>
+                        <span>メインワールドに移動します</span>
                     </div>
                     <div class="command-item">
                         <code>/res</code>
-                        <span>資源ワールドにtpします</span>
+                        <span>資源ワールドに移動します</span>
                     </div>
                     <div class="command-item">
-                        <code>/server trap</code>
-                        <span>トラップサーバーに移動します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/server main</code>
-                        <span><strong>メインサーバー</strong>に移動します</span>
+                        <code>/trap</code>
+                        <span>トラップワールドに移動します</span>
                     </div>
                 </div>
 
@@ -1157,6 +1195,7 @@
                         <li><a href="#" onclick="showPage('top')">トップページ</a></li>
                         <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
                         <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
                         <li><a href="#" onclick="showPage('news')">最新情報</a></li>
                     </ul>
                 </div>
@@ -1260,7 +1299,7 @@
                 <h3>7. モブトラップ・装置について</h3>
                 <p><strong>メインワールド</strong>では、大規模なモブトラップや負荷の大きい装置の作成はご遠慮ください<br>
                 小規模な生活用（畑・家畜など）は問題ありません<br>
-                大規模な装置を作りたい場合は、<strong>トラップサーバー</strong>をご利用ください</p>
+                大規模な装置を作りたい場合は、<strong>トラップワールド</strong>をご利用ください</p>
 
                 <h2 id="violations">違反行為について</h2>
                 <p>ルール違反が確認された場合、以下の処置が取られる場合があります：</p>
@@ -1286,6 +1325,7 @@
                         <li><a href="#" onclick="showPage('top')">トップページ</a></li>
                         <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
                         <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
                         <li><a href="#" onclick="showPage('news')">最新情報</a></li>
                     </ul>
                 </div>
@@ -1334,6 +1374,7 @@
                         <li><a href="#" onclick="showPage('top')">トップページ</a></li>
                         <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
                         <li><a href="#" onclick="showPage('rules')">ルール</a></li>
+                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
                         <li><a href="#" onclick="showPage('news')">最新情報</a></li>
                     </ul>
                 </div>
@@ -1348,6 +1389,15 @@
                     </ul>
                 </div>
             </div>
+        </div>
+    </main>
+
+    <main id="map-page" class="page">
+        <div class="map-container">
+            <iframe src="http://202.155.156.82:8123/" 
+                    title="Tsubusaba Server Map"
+                    allowfullscreen>
+            </iframe>
         </div>
     </main>
 
