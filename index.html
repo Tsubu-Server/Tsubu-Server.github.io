@@ -954,6 +954,10 @@
                         <code>/trap</code>
                         <span>トラップワールドに移動します</span>
                     </div>
+                    <div class="command-item">
+                        <code>/rec</code>
+                        <span>特殊アイテムのクラフトレシピを確認できます</span>
+                    </div>
                 </div>
 
                 <h2 id="protection">土地保護</h2>
@@ -1169,6 +1173,7 @@
                         グラップラーは、遠くの場所に素早く移動できる便利なアイテムです。<br>
                         メインハンドの場合は左クリックで、オフハンドの場合は右クリックで使用できます。<br>
                         ワイヤーがでた状態で左クリック（オフハンドは右クリック）もしくはアイテム持ち替えで解除できます。<br>
+                        クラフトすることで入手可能です。レシピの確認は/rec<br>
                         落下ダメージはあるので高い場所からの移動には注意しましょう。
                     </p>
                 </div>
@@ -1180,6 +1185,17 @@
                         強化モブは通常のモブよりも強力で、倒すのは一筋縄ではいきませんが、倒すと特別なアイテムや大量の経験値を獲得できます。<br>
                         強化モブに挑戦して、サバイバル生活にスリルを加えましょう！<br>
                         強化モブが出現したらメッセージが表示されるので、見逃さないようにしましょう。
+                    </p>
+                </div>
+                <h3>バックパック</h3>
+                <div class="world-item">
+                    <img src="backpack.png" alt="backpack画像" width="300" height="250">
+                    <p>
+                        バックパックは、追加のインベントリスペースを提供する便利なアイテムです。<br>
+                        バックパックを持って右クリックで開き、アイテムを収納できます。<br>
+                        バックパックは3種類あり、各バックパックは異なるサイズのインベントリを持っています。<br>
+                        一番グレードの高いバックパックは54スロットの大容量で、たくさんのアイテムを収納できます。<br>
+                        クラフトすることで入手可能です。レシピの確認は/rec
                     </p>
                 </div>
                 <h2 id="help-guide">困ったときは</h2>
@@ -1393,53 +1409,11 @@
     </main>
 
     <main id="map-page" class="page">
-        <div class="guide-layout">
-            <div class="guide-header">
-                <div class="guide-header-image">写真を追加予定</div>
-                <h1>サーバーマップ</h1>
-                <p>リアルタイムでつぶ鯖の世界を確認できます。<br>
-                新しいタブでDynmapが開きます。</p>
-            </div>
-            
-            <div class="guide-main">
-                <h2>マップについて</h2>
-                <p>つぶ鯖のDynmapでは、リアルタイムでサーバーの世界を確認できます。<br>
-                プレイヤーの位置や建築物、保護された土地などを地図上で見ることができます。</p>
-                
-                <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 8px; margin-top: 30px;">
-                    <h3 style="margin-bottom: 20px;">マップを表示</h3>
-                    <a href="http://202.155.156.82:8123/" 
-                       target="_blank" 
-                       class="link-button"
-                       style="font-size: 1.3rem; padding: 20px 40px;">
-                        マップを開く（新しいタブ）
-                    </a>
-                    <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
-                        ※ クリックすると新しいタブでDynmapが開きます
-                    </p>
-                </div>
-                
-                <h2 style="margin-top: 40px;">マップの使い方</h2>
-                <ul>
-                    <li>マウスホイールでズームイン/アウトができます</li>
-                    <li>ドラッグで地図を移動できます</li>
-                    <li>右上のメニューから表示を切り替えられます</li>
-                    <li>プレイヤーのアイコンをクリックすると詳細が表示されます</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="map-container">
+            <iframe src="http://202.155.156.82:8123/" 
+                    title="Tsubusaba Server Map"
+                    allowfullscreen>
+            </iframe>
         </div>
     </main>
 
@@ -1527,10 +1501,12 @@
         }
 
         function showCopySuccess(button) {
+            // ボタンのスタイルを変更してコピー完了を示す
             button.classList.add('copied');
             const originalText = button.innerHTML;
             button.innerHTML = '✓';
             
+            // 1.5秒後に元のスタイルに戻す
             setTimeout(function() {
                 button.classList.remove('copied');
                 button.innerHTML = originalText;
@@ -1538,6 +1514,7 @@
         }
 
         function showCopyError(button) {
+            // エラーの場合の処理（オプション）
             const originalText = button.innerHTML;
             button.innerHTML = '✗';
             button.style.color = 'red';
