@@ -92,7 +92,7 @@
         
         .hero-section {
             position: relative;
-            height: 500px;
+            height: 60vh;
             background-image: url("toppage.png");
             background-size: cover;
             background-position: center;
@@ -306,6 +306,7 @@
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 6px;
+            font-size: 1.1rem;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
@@ -605,7 +606,7 @@
         .world-item video {
             flex-shrink: 0;         /* 潰れないように固定 */
             border-radius: 8px;     /* 角丸 */
-            max-width: 500px;       /* お好みで幅を制限 */
+            max-width: 100%;       /* お好みで幅を制限 */
             height: auto;           /* 縦横比を維持 */
         }
 
@@ -624,9 +625,9 @@
 
         .video-container iframe,
         .video-container video {
-            width: 1150px;
-            height: 512px;
-            max-width: 100%;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
         }
 
         .map-container {
@@ -725,6 +726,12 @@
             .command-item code {
                 min-width: auto;
                 margin-right: 0;
+            }
+            
+            .world-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             }
         }
     </style>
