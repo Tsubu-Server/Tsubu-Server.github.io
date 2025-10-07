@@ -729,9 +729,41 @@
             }
             
             .world-item {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .shop-card {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .shop-card.reverse {
+                flex-direction: column !important;
+            }
+
+            .shop-card-image {
+                order: 2; /* 画像を下に */
+            }
+
+            .shop-card-text {
+                order: 1; /* テキストを上に */
+            }
+
+            .shop-card-image img {
+                width: 100%;
+                height: auto;
+            }
+
+            .shop-card-text h3 {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+            }
+
+            .shop-card-text p {
+                font-size: 1rem;
+                line-height: 1.7;
             }
         }
     </style>
