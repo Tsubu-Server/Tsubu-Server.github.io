@@ -3,1608 +3,661 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsubusaba | つぶ鯖 - Minecraftサーバー</title>
+    <title>つぶ鯖 運営規約</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background-color: #f5f5f5;
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            background: linear-gradient(135deg, #d4e6d4 0%, #c8ddc8 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #3a5a3a;
         }
-        
-        header {
-            background-color: #f8f8f8;
-            padding: 2rem 0 1rem 0;
-            text-align: center;
-        }
-        
+
         .container {
             max-width: 1200px;
-            margin: 0 auto; /* ブロック幅を中央に */
-            padding: 0 20px;
-            text-align: center; /* 中のテキストを中央に */
-            display: block;   
-        }
-        
-        h1 {
-            color: #111;
-            font-size: 2.5rem;
-            font-weight: normal;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            color: #888;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-        }
-        
-        nav {
-            background-color: #a8c08a;
-            padding: 0;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
             margin: 0 auto;
         }
-        
-        nav li {
-            flex: 1;
-            min-width: 120px;
-        }
-        
-        nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            font-size: 1rem;
+
+        header {
             text-align: center;
-            transition: background-color 0.3s ease;
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        nav li:last-child a {
-            border-right: none;
-        }
-        
-        nav a:hover, nav a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        main {
-            background-color: #f5f5f5;
-            margin: 0;
-        }
-        
-        .hero-section {
-            position: relative;
-            height: 60vh;
-            background-image: url("toppage.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-overlay {
-            background: rgba(0,0,0,0.3);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 50px;
-            border-radius: 8px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            max-width: 500px;
-        }
-        
-        .hero-content h2 {
-            font-size: 1.8rem;
-            color: #111;
-            margin-bottom: 15px;
-            font-weight: normal;
-            letter-spacing: 1px;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #333;
-            font-weight: normal;
-        }
-        
-        .content-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .server-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            color: #2d4a2d;
             margin-bottom: 50px;
+            padding: 50px 20px 30px;
         }
-        
-        .info-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .info-card h3 {
-            color: #111;
-            font-size: 1.3rem;
+
+        h1 {
+            font-size: 2.8em;
             margin-bottom: 15px;
-            font-weight: normal;
+            font-weight: 600;
+            letter-spacing: 2px;
         }
-        
-        .info-card p {
-            color: #444;
-            line-height: 1.8;
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #4a6a4a;
+            font-weight: 300;
         }
-        
-        .connection-info {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .connection-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: #111;
-            font-weight: normal;
-        }
-        
-        .connection-grid {
+
+        .rules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
-        
-        .connection-card {
-            background: #f8f8f8;
-            padding: 25px;
-            border-radius: 8px;
-        }
-        
-        .connection-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #111;
-            font-weight: normal;
-        }
-        
-        .connection-card p {
-            color: #444;
-            margin-bottom: 10px;
-        }
-        
-        .server-address {
-            font-family: monospace;
-            font-size: 1.1rem;
-            color: #4A90E2;
-            font-weight: bold;
-            background: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline;
-            margin: 0 5px 0 0;
-        }
-        
-        .copy-btn {
-            background: none;
-            border: none;
-            color: #667c47;
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 8px;
-            padding: 2px;
-            border-radius: 4px;
+
+        .rule-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(58, 90, 58, 0.1);
             transition: all 0.3s ease;
-            display: inline-block;
-            vertical-align: baseline;
-            width: 20px;
-            height: 20px;
-            line-height: 16px;
-            text-align: center;
-            position: relative;
-            top: 2px;
-        }
-        
-        .copy-btn:hover {
-            background-color: #8fb569;
-            color: white;
-        }
-        
-        .copy-btn:active {
-            background-color: #6d8a47;
+            cursor: pointer;
+            border: 1px solid rgba(150, 180, 150, 0.2);
         }
 
-        .copy-btn.copied {
-            background-color: #4CAF50;
-            color: white;
-        }
-        
-        .quick-links {
-            margin-top: 50px;
-        }
-        
-        .quick-links h3 {
-            color: #111;
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-            font-weight: normal;
-        }
-        
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .link-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-        
-        .link-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .link-card h4 {
-            color: #111;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
-        
-        .link-card p {
-            color: #444;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .link-button {
-            display: inline-block;
-            background-color: #a8c08a;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        .link-button:hover {
-            background-color: #8fb569;
-        }
-        
-        .page {
-            display: none;
-        }
-        
-        .page.active {
-            display: block;
-        }
-        
-        .guide-layout {
-            display: grid;
-            grid-template-columns: 1fr 250px;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0px;
-            
-        }
-        
-        .guide-layout-full-width {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            
+        .rule-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 90, 58, 0.15);
+            background: rgba(255, 255, 255, 0.95);
         }
 
-        .guide-header {
-            grid-column: 1 / -1;
-            text-align: center;
-            background-color: #f5f5f5;
-        }
-        
-        .guide-header-image {
-            position: relative;
-            height: 200px;
-            background-image: url("2toppage.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .guide-header h1 {
-            color: #111;
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        .guide-header p {
-            color: #444;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .guide-main {
-            background-color: #f5f5f5;
-        }
-        
-        .guide-main h2 {
-            color: #111;
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 40px 0 20px 0;
-            border-bottom: 2px solid #e0e0e0;
+        .rule-card h2 {
+            color: #3a5a3a;
+            margin-bottom: 18px;
+            font-size: 1.5em;
+            font-weight: 600;
+            border-bottom: 2px solid #a8c8a8;
             padding-bottom: 10px;
         }
-        
-        .guide-main h3 {
-            color: #111;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 20px 0 4px 0; /* 上を少し減らして、下も8pxくらいに */
-        }
 
-        
-        .guide-main h4 {
-            color: #111;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 20px 0 10px 0;
-        }
-        
-        .guide-main p {
-            color: #444;
+        .rule-card p {
+            color: #556655;
             line-height: 1.8;
             margin-bottom: 20px;
-        }
-        
-        .guide-main ul {
-            margin: 15px 0 20px 25px;
-            color: #444;
-        }
-        
-        .guide-main li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-        
-        .connection-table {
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-        
-        .connection-row {
-            display: grid;
-            grid-template-columns: 120px 180px 1fr;
-            padding: 15px 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .connection-row:last-child {
-            border-bottom: none;
-        }
-        
-        .connection-row .platform {
-            font-weight: bold;
-            color: #111;
-        }
-        
-        .connection-row .version {
-            color: #444;
-        }
-        
-        .connection-row .address {
-            font-family: monospace;
-            color: #4A90E2;
-            font-weight: bold;
-        }
-        
-        .command-list {
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .command-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .command-item:last-child {
-            border-bottom: none;
-        }
-        
-        .command-item code {
-            background-color: transparent;  /* 背景なし */
-            color: #111;                    /* 黒文字 */
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-family: monospace;
-            margin-right: 20px;
-            min-width: 200px;
-        }
-        
-        .command-item span {
-            color: #444;
-        }
-        .command-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            overflow: hidden;
+            font-size: 0.95em;
         }
 
-        .command-table th, 
-        .command-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .command-table th {
-            background-color: #ddd;
-            font-weight: bold;
-            color: #111;
-        }
-
-        .command-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .command-table td:first-child {
-            font-family: monospace;
-            min-width: 200px;
-            color: #111;
-        }
-        .shop-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .shop-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .shop-card.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .shop-card-image img {
-            border-radius: 10px;
-        }
-
-        .shop-card-text h3 {
-            margin-top: 0;
-            color: #333;
-        }
-
-        .shop-card-text p {
-            margin: 0.5em 0 0;
-            line-height: 1.5;
-        }
-
-        .sidebar {
-            background-color: #eeeeee;
-            padding: 20px;
-            border-radius: 8px;
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-        }
-        
-        .sidebar h3 {
-            color: #111;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #a8c08a;
-            padding-bottom: 8px;
-        }
-        
-        .sidebar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .sidebar li {
-            margin-bottom: 8px;
-        }
-        
-        .sidebar a {
-            color: #667c47;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: block;
-            padding: 5px 8px;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-        
-        .sidebar a:hover {
-            background-color: #a8c08a;
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: #6b8e6b;
             color: white;
-        }
-        
-        .sidebar-section {
-            margin-bottom: 25px;
-        }
-        
-        .sidebar-section:last-child {
-            margin-bottom: 0;
-        }
-        .world-item {
-            display: flex;
-            align-items: flex-start; /* 上揃え */
-            gap: 20px;              /* 動画/画像と文章の間に余白 */
-            margin-bottom: 30px;    /* 次のブロックとの間隔 */
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
-        .world-item img,
-        .world-item video {
-            flex-shrink: 0;         /* 潰れないように固定 */
-            border-radius: 8px;     /* 角丸 */
-            max-width: 100%;       /* お好みで幅を制限 */
-            height: auto;           /* 縦横比を維持 */
+        .btn:hover {
+            background: #5a7a5a;
+            transform: translateY(-1px);
         }
 
-        .world-item p {
-            font-size: 1.1rem;
-            color: #333;
-            margin: 0;
+        .common-rules {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(58, 90, 58, 0.12);
+            margin-bottom: 40px;
+            border: 2px solid #a8c8a8;
         }
-        .mannnaka{
+
+        .common-rules h2 {
+            color: #3a5a3a;
+            margin-bottom: 20px;
+            font-size: 2em;
             text-align: center;
-        }
-        .video-container {
-            display: flex;
-            justify-content: center;
+            font-weight: 600;
         }
 
-        .video-container iframe,
-        .video-container video {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
+        .common-rules p {
+            line-height: 1.9;
+            color: #556655;
+            font-size: 1.05em;
         }
 
-        .map-container {
-            width: 100%;
-            height: calc(100vh - 120px);
-            min-height: 700px;
-            border: none;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .map-container iframe {
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border: none;
+            background: rgba(45, 74, 45, 0.75);
+            z-index: 1000;
+            overflow-y: auto;
         }
 
-        #map-page {
-            padding: 0;
-            margin: 0;
+        .modal-content {
+            background: #fafcfa;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 45px;
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
         }
 
-        #map-page .guide-layout-full-width {
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 32px;
+            color: #6b8e6b;
+            cursor: pointer;
+            transition: color 0.3s;
+            font-weight: 300;
         }
-        
+
+        .close:hover {
+            color: #3a5a3a;
+        }
+
+        .modal-content h2 {
+            color: #3a5a3a;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 600;
+            border-bottom: 3px solid #a8c8a8;
+            padding-bottom: 12px;
+        }
+
+        .modal-content h3 {
+            color: #4a6a4a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .modal-content p, .modal-content ul, .modal-content ol {
+            line-height: 1.9;
+            color: #3a5a3a;
+            margin-bottom: 18px;
+        }
+
+        .modal-content ul, .modal-content ol {
+            margin-left: 25px;
+        }
+
+        .modal-content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: #4a6a4a;
+            padding: 30px;
+            font-size: 0.9em;
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2em;
             }
-            
-            .hero-content {
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 20px;
                 padding: 30px 25px;
-                margin: 0 20px;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .content-section {
-                padding: 40px 20px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav li {
-                min-width: auto;
-            }
-            
-            nav a {
-                border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            nav li:last-child a {
-                border-bottom: none;
-            }
-            
-            .guide-layout {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-            
-            .sidebar {
-                position: relative;
-                order: -1;
-            }
-            
-            .connection-row {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-            
-            .connection-row .platform,
-            .connection-row .version,
-            .connection-row .address {
-                text-align: left;
-            }
-            
-            .command-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .command-item code {
-                min-width: auto;
-                margin-right: 0;
-            }
-            
-            .world-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
             }
 
-            .shop-card {
-                flex-direction: column !important;
-                text-align: center;
-            }
-
-            .shop-card.reverse {
-                flex-direction: column !important;
-            }
-
-            .shop-card-image {
-                order: 2; /* 画像を下に */
-            }
-
-            .shop-card-text {
-                order: 1; /* テキストを上に */
-            }
-
-            .shop-card-image img {
-                width: 100%;
-                height: auto;
-            }
-
-            .shop-card-text h3 {
-                font-size: 1.4rem;
-                margin-bottom: 10px;
-            }
-
-            .shop-card-text p {
-                font-size: 1rem;
-                line-height: 1.7;
+            .common-rules {
+                padding: 25px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Tsubusaba | つぶ鯖</h1>
-            <p class="subtitle">A New Life For You</p>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>つぶ鯖 運営規約</h1>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showPage('top')" class="active">トップページ</a></li>
-            <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-            <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-            <li><a href="#" onclick="showPage('map')">マップ</a></li>
-            <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-        </ul>
-    </nav>
-
-    <main id="top-page" class="page active">
-        <div class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2>Welcome to Tsubusaba</h2>
-                <p>つぶ鯖で新しい生活を送ろう</p>
+        <div class="common-rules">
+            <h2>運営・開発共通規約</h2>
+            <p style="text-align: center;">
+                本規約は、つぶ鯖の運営・開発に携わる全メンバーが、健全で公平なサーバー運営を行うための基本原則です。<br>
+                各役職の規約と併せて適用されます。
+            </p>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="#" class="btn" onclick="showModal('common'); return false;">詳細を見る</a>
             </div>
         </div>
-        
-        <div class="guide-layout">
-            <div class="content-section" style="padding: 60px 0;">
-                <div class="server-info">
-                    <div class="info-card">
-                        <h3>特別な世界</h3>
-                        <p>つぶ鯖はバニラとは変わったバイオームの世界が広がる生活サーバーです。新しい環境で冒険を楽しもう！</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <h3>自由な生活</h3>
-                        <p>ゆるゆるとした平和な生活から、スリルあふれる冒険まで、幅広いプレイスタイルでお楽しみいただけます。</p>
-                    </div>
-                </div>
-                
-                <div class="connection-info">
-                    <h3>サーバー参加方法</h3>
-                    <div class="connection-grid">
-                        <div class="connection-card">
-                            <h4>Java版</h4>
-                            <p>対応バージョン: 1.8.9 ～ 1.21.9</p>
-                            <p>IP: <span class="server-address">tsubusaba.ddo.jp</span><button class="copy-btn" onclick="copyToClipboard('tsubusaba.ddo.jp', this)" title="コピー">⧉</button></p>
-                        </div>
-                        
-                        <div class="connection-card">
-                            <h4>統合版（Bedrock）</h4>
-                            <p>IP: <span class="server-address">tsubusaba.ddo.jp</span><button class="copy-btn" onclick="copyToClipboard('tsubusaba.ddo.jp', this)" title="コピー">⧉</button></p>
-                            <p>ポート: <span class="server-address">25565</span><button class="copy-btn" onclick="copyToClipboard('25565', this)" title="コピー">⧉</button></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="quick-links">
-                    <div class="link-grid">
-                        <div class="link-card">
-                            <h4>サーバーのガイドはこちら</h4>
-                            <p>基本的な遊び方やコマンドについて説明しています。</p>
-                            <a href="#" onclick="showPage('guide')" class="link-button">ガイドを見る</a>
-                        </div>
-                        
-                        <div class="link-card">
-                            <h4>ルールはこちら</h4>
-                            <p>サーバーのルールとマナーについて必ずご確認ください。</p>
-                            <a href="#" onclick="showPage('rules')" class="link-button">ルールを見る</a>
-                        </div>
-                    </div>
-                </div>
+
+        <div class="rules-grid">
+            <div class="rule-card" onclick="showModal('admin')">
+                <h2>Admin</h2>
+                <p>運営統括補佐として、各職の活動監督・調整・品質維持を行い、サーバー管理者を支援します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('admin'); return false;">詳細を見る</a>
             </div>
-            
-            <div class="sidebar sidebar-section">
-                <h3>ページ</h3>
-                <ul>
-                    <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                    <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                    <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                    <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                    <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                </ul>
+
+            <div class="rule-card" onclick="showModal('developer')">
+                <h2>Developer</h2>
+                <p>プラグイン開発・バグ修正・GitHub運用を担当し、安全かつ効率的なサーバー開発を実現します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('developer'); return false;">詳細を見る</a>
+            </div>
+
+            <div class="rule-card" onclick="showModal('builder')">
+                <h2>Builder</h2>
+                <p>サーバー内の建築物・景観・インフラの設計・制作を担当し、世界観の維持に貢献します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('builder'); return false;">詳細を見る</a>
+            </div>
+
+            <div class="rule-card" onclick="showModal('moderator')">
+                <h2>Moderator</h2>
+                <p>プレイヤーの秩序維持・トラブル対応を行い、公正で円滑なコミュニティ管理を実現します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('moderator'); return false;">詳細を見る</a>
+            </div>
+
+            <div class="rule-card" onclick="showModal('planner')">
+                <h2>Planner</h2>
+                <p>イベント企画・システム仕様・サーバー方針を立案し、円滑かつ一貫性のある運営を支援します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('planner'); return false;">詳細を見る</a>
+            </div>
+
+            <div class="rule-card" onclick="showModal('support')">
+                <h2>Support</h2>
+                <p>プレイヤー対応・不具合確認・デバッグを担当し、快適なサーバー環境の維持を支援します。</p>
+                <a href="#" class="btn" onclick="event.stopPropagation(); showModal('support'); return false;">詳細を見る</a>
             </div>
         </div>
-    </main>
 
-    <main id="guide-page" class="page">
-        <div class="guide-layout">
-            <div class="guide-header">
-                <div class="guide-header-image">写真を追加予定</div>
-                <h1>サーバーガイド</h1>
-                <p>つぶ鯖の基本的な遊び方やコマンドについて説明します。<br>初心者の方も安心して始められるよう、丁寧に解説しています。</p>
-            </div>
-            
-            <div class="guide-main">
-                <h2 id="basic">サーバー・ワールド一覧</h2>
-                <p style="font-family: 'Arial', sans-serif; font-size: 30px;">メインワールド</p>
-            <div class="world-item">
-                <img src="life.png" alt="画像の説明" width="300" height="200">
-                <p>
-                    つぶ鯖のメインワールドです。ここではサバイバル生活を楽しむことができます。<br>
-                    広大な土地には様々なバイオームが広がっており、建築や農業、冒険など多彩な活動が可能です。
-                    他のプレイヤーと交流したり、協力して大規模なプロジェクトに挑戦することもできます。<br>
-                    メインワールドは定期的にバックアップされており、安心して長期間のプレイが楽しめます。<br>
-                    つぶ鯖の中心地であり、最も活気のある場所です。ぜひここで新しい生活を始めてみてください！
-                    /mainで移動可能。
-                </p>
-            </div>
-            <!-- 資源ワールド -->
-            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">資源ワールド</p>
-            <div class="world-item">
-                <img src="resource.png" alt="資源ワールド画像" width="300" height="200">
-                <p>
-                    資源採取とダンジョン探索がメインのワールドです。鉱石や木材などの資源を自由に採掘・収集できます。
-                    低確率で出現する強化モブに挑戦して、特別なアイテムや大量の経験値を獲得することもできます！
-                    このワールドは定期的にリセットされるため、常に新しい環境で冒険や資源集めを楽しめます。
-                    建築には不向きですが、メインワールドでの活動を支える重要な場所となっています。
-                    /resで移動可能。
-                </p>
-            </div>
-            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">トラップワールド</p>
-            <div class="world-item">
-                <img src="trap.png" alt="トラップワールド画像" width="300" height="200">
-                <p>
-                    大規模な装置やトラップの建築に特化したワールドです。メインワールドとは異なり、自由に大規模な装置を作成できます。
-                    例えば、自動化された農場やモブトラップ、複雑なレッドストーン回路など、創造力を存分に発揮できる場所です。
-                    このワールドも定期的にリセットされるため、常に新しい環境で挑戦と創造を楽しめます。
-                    /trapで移動可能。
-                </p>
-            </div>
-            <h2 id="post-join-guide">参加後のガイド</h2>
-            <div class="world-item">
-                <img src="sontyou.png" alt="初期配布画像" width="300" height="200">
-                <p>まずはじめに、村長さんに話しかけて初心者キットをもらいましょう。<br>
-                    キットには生活に役立つアイテムが入っています。キットのアイテムで使用できる機能は以下の通りです。<br>
-                    ・<strong>コンパス</strong>：左クリックでサーバーのメインメニューを開きます<br>
-                    ・<strong>紙</strong>：右クリックで土地の情報を確認できます。<br>
-                    ・<strong>金のシャベル</strong>：土地保護の範囲選択に使用します。→<a href="#protection">土地保護の方法はこちら</a><br>
-                    ・<strong>金の斧</strong>：右クリックでコマンドいらずでsethomeできます。<br>
-                </p>
-            </div>
-            <div class="world-item">
-                <img src="syokugyou.png" alt="職業画像" width="300" height="200">
-                <p>次に、メインメニューで職業選択をクリック（もしくは/jobs join）で職業選択画面を開いて職業に就きましょう。<br>
-                    職業に就くことでお金を稼いだり、特別なアイテムを作成したりできます。<br>
-                    どの職業も無料でいつでも変更可能です。自分のプレイスタイルに合った職業を選び、サバイバル生活をより充実させましょう。
-                </p>
-            </div>
-            <div class="world-item">
-                <img src="adminshop.png" alt="ショップ画像" width="300" height="200">
-                <p>また、初期地にいる運営ショップに話しかけて便利なアイテムを買いましょう。<br>
-                    運営ショップでは、サバイバル生活に少し役立つアイテムを手に入れることができます。<br>
-                    例えば、食料や便利な道具、基礎の建築資材などが揃っています。<br>
-                    運営ショップ以外にも、プレイヤーショップを活用して他のプレイヤーと取引を楽しむこともできます。<a href="#shop-guide">詳細はショップタブへ</a><br>
-                </p>
-            </div>
-            <div class="world-item">
-                <img src="let'sgo.png" alt="スタート画像" width="300" height="200">
-                <p>
-                    <span style="font-size:30px;">さあ、出発しよう</span><br>
-                    これで基本的な準備は完了です。<br>
-                    あとは自分のペースでサバイバル生活を楽しみましょう。<br>
-                    グラップラーで縦横無尽な移動と冒険を楽しんだり、<br>
-                    友達と一緒に大きな建築プロジェクトに挑戦したり、<br>
-                    自分だけの遊び方を見つけてください。<br>
-                    つぶ鯖での新しい生活が素晴らしいものになりますように！
-                </p>
-            </div>
-            
-            <h2 id="commands">基本コマンド</h2>
-                <div class="command-list">
-                    <div class="command-item">
-                        <code>/menu</code>
-                        <span>サーバーのメインメニューを開きます</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/gmenu</code>
-                        <span>土地のメニューを開きます</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/sethome</code>
-                        <span>ホームを設定します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/thome</code>
-                        <span>ホーム一覧メニューを開きます</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/pay プレイヤー 金額</code>
-                        <span>プレイヤーに送金します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/pshop</code>
-                        <span>プレイヤーショップを開きます</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/jobs join</code>
-                        <span>職業に就きます</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/spawn</code>
-                        <span>メインワールドのスポーン地点に戻ります</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/tpa プレイヤー</code>
-                        <span>プレイヤーにtp申請を送ります</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/back</code>
-                        <span>死亡場所にtpします</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/main</code>
-                        <span>メインワールドに移動します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/res</code>
-                        <span>資源ワールドに移動します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/trap</code>
-                        <span>トラップワールドに移動します</span>
-                    </div>
-                    <div class="command-item">
-                        <code>/rec</code>
-                        <span>特殊アイテムのクラフトレシピを確認できます</span>
-                    </div>
-                </div>
+        <footer>
+            <p>© 2025 Tsubusaba All Rights Reserved</p>
+        </footer>
+    </div>
 
-                <h2 id="protection">土地保護</h2>
-                <p>
-                    つぶ鯖では <strong>GriefPrevention</strong>プラグインを導入しており、建築や自分の大切なものを安全に守ることができます！
-                    他のプレイヤーによる荒らしを心配する必要はありません。自分や仲間との空間を自由に作り上げましょう！
-                </p>
-                <p style="font-family: 'Arial', sans-serif; font-size: 30px;">土地を保護するとどうなるの？</p>
-                <ul>
-                    <li><strong>建築物の保護</strong> – 自分の保護したエリアでは、他のプレイヤーはブロックを壊したり置いたりできません。</li>
-                    <li><strong>チェストの安全</strong> – 保護範囲内のチェストやドアも勝手に操作されません。</li>
-                    <li><strong>柔軟な設定</strong> – 友達だけを追加して一緒に使うことも可能。協力プレイも安心です。</li>
-                    <li><strong>荒らし対策</strong> – 土地を保護することで、いたずらや荒らし行為を未然に防止します。</li>
-                    <li><strong>安心したサバイバル生活</strong> – 自分の拠点や建築物を長期間安心して維持できます。</li>
-                </ul>
-                <h3>土地保護の作成手順</h3>
-                <div class="world-item">
-                <img src="totihogo.png" alt="土地保護画像" width="500" height="350">
-                    <p>
-                        1. <strong>保護範囲の設定</strong><br>
-                        金のシャベルを持って、保護したいエリアの対角線上の2点をそれぞれ右クリック/タップで選択します。<br>
-                        2. <strong>土地の管理</strong><br>
-                        範囲を設定したあと、/gmenuで土地のメニューを開いて保護の設定などを行えます。詳細は動画を確認<br>
-                        3. <strong>土地の情報</strong><br>
-                        紙を持って保護した土地に右クリックで土地の情報を見れます<br>
-                        4. <strong>土地の設定について</strong><br>
-                        下の動画を参考に土地の管理や保護ブロックの購入、友達の追加などを行いましょう。
-                    </p>
-                </div>
-                <h3>土地のチュートリアル動画</h3>
-                <div class="video-container">
-                <iframe
-                    src="https://www.youtube.com/embed/c64u7HqIBeQ?si=fn1S5YcF-YboHNAs" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-                </div>
-                <h3>フラグ・権限一覧 | ◯ = フラグ ▢ = 権限</h3>
-                <table class="command-table">
-                <thead>
-                    <tr>
-                        <th>フラグ・権限</th>
-                        <th>説明</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>◯PvP</td>
-                        <td>土地内でのPvPの許可を設定できます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯モブのスポーン防止</td>
-                        <td>土地内でのすべてのモブのスポーンを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯敵モブのスポーン防止</td>
-                        <td>土地内での敵対モブのスポーンを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯敵モブ防止</td>
-                        <td>土地内での敵対モブのスポーンと敵対モブによる攻撃を防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯畑荒らし防止</td>
-                        <td>土地内で農作物が踏み荒らされるのを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯ウィザーダメージ許可</td>
-                        <td>土地内でのウィザーによるダメージの許可を設定できます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯火のブロックダメージ防止</td>
-                        <td>土地内でブロックが火のダメージを受けるのを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯火の延焼防止</td>
-                        <td>土地内での火の延焼を防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯火の延焼防止</td>
-                        <td>土地内での火の延焼を防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯落下ダメージ防止</td>
-                        <td>土地内でプレイヤーが落下ダメージを受けるのを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯液体の流れ防止</td>
-                        <td>土地内で液体（水など）が流れるのを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯氷の生成防止</td>
-                        <td>土地内での氷の生成を防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯葉の自然消滅防止</td>
-                        <td>土地内での葉の自然消滅を防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>◯雪の生成防止</td>
-                        <td>土地内で雪がつもるのを防ぎます。</td>
-                    </tr>
-                    <tr>
-                        <td>▢土地の訪問者</td>
-                        <td>土地内でレバーやドア、フェンスゲートなどの操作ができます。</td>
-                    </tr>
-                    <tr>
-                        <td>▢土地の利用者</td>
-                        <td>訪問者の操作に加え、チェスト・樽・かまどなどの操作ができます。</td>
-                    </tr>
-                    <tr>
-                        <td>▢土地の建築者</td>
-                        <td>利用者の操作に加え、ブロックの設置や破壊などの操作ができます。</td>
-                    </tr>
-                </tbody>
-                </table>
-                <h2 id="shop-guide">ショップ</h2>
-                <p>
-                    つぶ鯖では、運営ショップとプレイヤーショップの2種類のショップがあります。<br>
-                    運営ショップでは生活に役立つアイテムを購入でき、プレイヤーショップでは他のプレイヤーが出品しているアイテムを購入したり、自分のアイテムを販売したりできます。<br>
-                    どちらのショップもサバイバル生活をより便利に、楽しくするための重要な要素です。<br>
-                    以下でそれぞれのショップの利用方法について説明します。
-                </p>    
-                <div class="shop-cards">
-
-                    <!-- 購入カード -->
-                    <div class="shop-card">
-                        <div class="shop-card-image">
-                            <img src="playershop.png" alt="プレイヤーショップ画像" width="350" height="200">
-                        </div>
-                        <div class="shop-card-text">
-                            <h3>プレイヤーショップでの購入</h3>
-                            <p>
-                                /pshopでショップを開き、「商品を見る」で他のプレイヤーが出品しているアイテムを閲覧・購入できます。<br>
-                                取引はサーバー内通貨で行われ、売買を通じて他のプレイヤーと交流できます。
-                            </p>
-                        </div>
-                    </div>
-
-                <div class="shop-card" style="text-align:center; margin-top:30px;">
-                    <div class="shop-card-sections" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-
-                        <div class="shop-card-section" style="text-align:center; max-width:500px;">
-                            <h3>アイテムの出品</h3>
-                            <img src="shopsell.png" alt="アイテム出品手順画像" width="500" height="60">
-                            <p>
-                                出品したいアイテムを手に持って<br>
-                                <strong>"/pshop(s) sell 個数 価格"</strong><br>
-                                でアイテムを出品できます。
-                            </p>
-                        </div>
-
-                        <div class="shop-card-section" style="text-align:center; max-width:500px;">
-                            <img src="sellsucces.png" alt="出品成功画像" width="500" height="80">
-                            <p>
-                                出品が成功するとメッセージが表示されます。<br>
-                                /pshop → 「自分のショップを見る」で出品管理可能。<br>
-                                アイテムが売れると自動でお金が口座に入ります。<br>
-                                不要になった出品は「出品をキャンセル」でキャンセルできます。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="shop-card reverse">
-                    <div class="shop-card-image">
-                        <img src="adminshop2.png" alt="運営ショップ画像" width="350" height="200">
-                    </div>
-                    <div class="shop-card-text">
-                        <h3>運営ショップでの購入</h3>
-                        <p>
-                            初期地にいる運営ショップNPCに話しかけて便利なアイテムを買いましょう。<br>
-                            運営ショップでは、建材は固定ショップと週替りの特売ショップ、その他食料や便利な道具などが揃っています。<br>
-                        </p>
-                    </div>
-                </div>
-                <div class="shop-card reverse">
-                    <div class="shop-card-image">
-                        <img src="adminshop3.png" alt="運営買取ショップ画像" width="350" height="200">
-                    </div>
-                    <div class="shop-card-text">
-                        <h3>運営買取ショップ</h3>
-                        <p>
-                            初期地にいる買取ショップNPCに話しかけると、集めたアイテムを売ることができます。<br>
-                            買取価格はアイテムごとに決まっておりまとめて売ることも可能です。<br>
-                            買い取るアイテムは<strong>定期的に変更</strong>されるため、こまめにチェックしてお得に売りましょう。
-                        </p>
-                    </div>
-                </div>
-            </div>
-                <h2 id="unique-features">独自機能</h2>
-                <p>つぶ鯖では通常のサバイバル生活をより楽しく、便利にするための独自機能をいくつか実装しています。これらの機能を活用して、自分だけのプレイスタイルを見つけましょう！</p>
-                <h3>壁登り</h3>
-                <div class="world-item">
-                    <video controls width="500" height="350">
-                        <source src="壁登り.mp4" type="video/mp4">
-                    </video>
-                    <p>
-                        壁登り機能を使うと、特定のブロックを登ることができます。<br>
-                        例えば、土や石などのブロックを登ることができ、建築や探索の幅が広がります。<br>
-                        メインハンドに何も持たない状態で、壁に向かって右クリックで登れます。スタミナを消費するため、使いすぎには注意しましょう。<br>
-                        登った状態でジャンプ長押しで上に登れて、しゃがみで降りれます。壁から離れると解除できます。
-                    </p>
-                </div>
-                <h3>グラップラー</h3>
-                <div class="world-item">
-                    <video controls width="500" height="350">
-                        <source src="グラップラー.mp4" type="video/mp4">
-                    </video>
-                    <p>
-                        グラップラーは、遠くの場所に素早く移動できる便利なアイテムです。<br>
-                        メインハンドの場合は左クリックで、オフハンドの場合は右クリックで使用できます。<br>
-                        ワイヤーがでた状態で左クリック（オフハンドは右クリック）もしくはアイテム持ち替えで解除できます。<br>
-                        クラフトすることで入手可能です。レシピの確認は/rec<br>
-                        落下ダメージはあるので高い場所からの移動には注意しましょう。
-                    </p>
-                </div>
-                <h3>強化モブ</h3>
-                <div class="world-item">
-                    <img src="inf.png" alt="強化モブ画像" width="300" height="100">
-                    <p>
-                        資源ワールドでは、低確率で強化されたモブが出現します。<br>
-                        強化モブは通常のモブよりも強力で、倒すのは一筋縄ではいきませんが、倒すと特別なアイテムや大量の経験値を獲得できます。<br>
-                        強化モブに挑戦して、サバイバル生活にスリルを加えましょう！<br>
-                        強化モブが出現したらメッセージが表示されるので、見逃さないようにしましょう。
-                    </p>
-                </div>
-                <h3>バックパック</h3>
-                <div class="world-item">
-                    <img src="backpack.png" alt="backpack画像" width="300" height="250">
-                    <p>
-                        バックパックは、追加のインベントリスペースを提供する便利なアイテムです。<br>
-                        バックパックを持って右クリックで開き、アイテムを収納できます。<br>
-                        バックパックは3種類あり、各バックパックは異なるサイズのインベントリを持っています。<br>
-                        一番グレードの高いバックパックは54スロットの大容量で、たくさんのアイテムを収納できます。<br>
-                        クラフトすることで入手可能です。レシピの確認は/rec
-                    </p>
-                </div>
-                <h2 id="help-guide">困ったときは</h2>
-                <p>困ったときは、Discordの#管理班への連絡で相談や<br>
-                   サーバー内で/tell Donchanikiで直接質問することができます。<br>
-                   なにか困ったことがあれば気軽に相談してください！<br>
-                </p>
-                </div>
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3>このページの項目</h3>
-                    <ul>
-                        <li><a href="#basic" onclick="scrollToSection('basic')">サーバー・ワールド一覧</a></li>
-                        <li><a href="#post-join-guide" onclick="scrollToSection('post-join-guide')">参加後のガイド</a></li>
-                        <li><a href="#commands" onclick="scrollToSection('commands')">基本コマンド</a></li>
-                        <li><a href="#protection" onclick="scrollToSection('protection')">土地保護</a></li>
-                        <li><a href="#shop-guide" onclick="scrollToSection('shop-guide')">ショップ</a></li>
-                        <li><a href="#unique-features" onclick="scrollToSection('unique-features')">独自機能</a></li>
-                        <li><a href="#help-guide" onclick="scrollToSection('help-guide')">困ったときは</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- モーダル -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
         </div>
-    </main>
-
-    <main id="rules-page" class="page">
-        <div class="guide-layout">
-            <div class="guide-header">
-                <div class="guide-header-image">写真を追加予定</div>
-                <h1>サーバールール</h1>
-                <p>つぶ鯖でのルールとマナーについて説明します。<br>
-                すべてのプレイヤーが楽しくプレイできるように、必ずお読みください。</p>
-            </div>
-            
-            <div class="guide-main">
-                <h2 id="discord-rules">📌 Discordルール</h2>
-                
-                <h3>1. チャットマナー</h3>
-                <ul>
-                    <li>他人を不快にさせる発言をしない</li>
-                    <li>スパム（連投・連続通知・意味のない文字列など）をしない</li>
-                </ul>
-                
-                <h3>2. 宣伝・勧誘</h3>
-                <ul>
-                    <li>他サーバーの無断宣伝をしない</li>
-                    <li>Discord招待リンクの貼付けは運営の許可を得てから</li>
-                </ul>
-
-                <h2 id="game-rules">📌 ゲーム内ルール</h2>
-                
-                <h3>1. プレイマナー</h3>
-                
-                <h4>他プレイヤーへの配慮</h4>
-                <p>他の人が楽しくプレイできるよう、迷惑になる行動は控えましょう</p>
-                
-                <h4>建築物・拠点など</h4>
-                <p>土地を保護して建築を守りましょう。<br>
-                保護されていない場所でも、悪質な破壊などは処罰対象です。</p>
-                
-                <h4>会話・交流のマナー</h4>
-                <ul>
-                    <li>スパム・連投は禁止（同じ内容を5回以上流さない）</li>
-                    <li>他人を不快にする煽り・荒らし行為をしない</li>
-                </ul>
-
-                <h3>2. 経済・取引ルール</h3>
-                
-                <h4>安心できる取引のために</h4>
-                <p>プレイヤー間の取引では、お互いに約束を守りましょう。<br>
-                虚偽の商品説明などの詐欺行為は禁止です。<br>
-                また、過度な価格操作や買い占めはゲームバランスを壊すため控えてください。</p>
-                
-                <h4>トラブルが起きたら</h4>
-                <p>万が一トラブルになった場合は、<strong>/reportplayer</strong> または <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">Discord #📥管理班への連絡</a> までお知らせください。<br>
-                状況に応じてスタッフが確認・対応します。</p>
-
-                <h3>3. 不正・外部ツール</h3>
-                
-                <h4>禁止されているもの</h4>
-                <ul>
-                    <li>チートクライアント（Fly, KillAura, X-Ray など）</li>
-                    <li>自動クリック（マクロ）、連打ツール、外部スクリプト</li>
-                </ul>
-                
-                <h4>利用可能なもの</h4>
-                <p>サーバーが推奨するMOD（例：軽量化MOD, マップMOD など）<br>
-                その他のMODを使用したい場合は、運営へ確認をお願いします。</p>
-
-                <h3>4. ゲーム仕様の尊重</h3>
-                <ul>
-                    <li>バグの悪用（ブロック抜け、無限増殖など）は禁止です</li>
-                    <li>不具合や不自然な挙動を見つけた場合は、<strong>/reportbug</strong> または <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">Discord #📥管理班への連絡</a> までお知らせください</li>
-                    <li>サーバーに高負荷をかける行為（過度なレッドストーン回路、大量のエンティティなど）は控えてください</li>
-                </ul>
-
-                <h3>5. 土地・建築について</h3>
-                <p>長期間ログインがない場合、土地や建築物が整理される可能性があります</p>
-
-                <h3>6. 資源集めについて</h3>
-                <p><strong>メインワールド</strong>での大規模な資源採取（資源集めを目的とした露天掘り・森林伐採・ブランチマイニングなど）はご遠慮ください<br>
-                大量の資源を集めたい場合は、<strong>資源ワールド</strong>をご利用ください<br>
-                小規模な生活用の採掘や伐採はメインワールドでも問題ありません<br>
-                資源ワールドは定期的にリセットされるため、いつでも新しい資源を確保できます</p>
-
-                <h3>7. モブトラップ・装置について</h3>
-                <p><strong>メインワールド</strong>では、大規模なモブトラップや負荷の大きい装置の作成はご遠慮ください<br>
-                小規模な生活用（畑・家畜など）は問題ありません<br>
-                大規模な装置を作りたい場合は、<strong>トラップワールド</strong>をご利用ください</p>
-
-                <h2 id="violations">違反行為について</h2>
-                <p>ルール違反が確認された場合、以下の処置が取られる場合があります：</p>
-                <ul>
-                    <li><strong>警告</strong> - 軽微な違反に対して行われます</li>
-                    <li><strong>一時的な利用停止</strong> - 繰り返しの違反や重大な違反に対して行われます</li>
-                    <li><strong>永久BAN</strong> - 悪質な違反や改善が見られない場合に行われます</li>
-                </ul>
-
-                <h2 id="reporting">報告方法</h2>
-                <p>ルール違反やトラブルを発見した場合は、以下の方法で報告してください：</p>
-                <ul>
-                    <li><strong>ゲーム内</strong>: <strong>/reportplayer</strong>（プレイヤー違反報告） | <strong>/reportbug</strong>（バグ報告）</li>
-                    <li><strong>Discord</strong>: <a href="https://discord.com/channels/1369153648453750824/1392767387727691866" target="_blank">#📥管理班への連絡</a> チャンネルで報告</li>
-                    <li>違反行為の証拠となるスクリーンショットがあると対応がスムーズです</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3>このページの項目</h3>
-                    <ul>
-                        <li><a href="#discord-rules" onclick="scrollToSection('discord-rules')">Discordルール</a></li>
-                        <li><a href="#game-rules" onclick="scrollToSection('game-rules')">ゲーム内ルール</a></li>
-                        <li><a href="#violations" onclick="scrollToSection('violations')">違反行為について</a></li>
-                        <li><a href="#reporting" onclick="scrollToSection('reporting')">報告方法</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <main id="news-page" class="page">
-        <div class="guide-layout">
-            <div class="guide-header">
-                <div class="guide-header-image">写真を追加予定</div>
-                <h1>最新情報</h1>
-                <p>つぶ鯖の最新情報やイベント情報をお知らせします。<br>
-                まだここには何もありませんが、今後更新していきます！
-                </p>
-            </div>
-            
-            <div class="guide-main">
-                <h2 id="recent-news">最新のお知らせ</h2>
-
-                <h2 id="events">イベント情報</h2>
-                <p>現在開催中のイベントはありません。</p>
-                <p>今後、季節イベントや建築コンテストなど、様々なイベントを開催予定です。お楽しみに！</p>
-
-                <h2 id="updates">アップデート履歴</h2>
-
-                <h2 id="maintenance">メンテナンス予定</h2>
-                <p>現在、定期メンテナンスの予定はありません。</p>
-                <p>緊急メンテナンスが必要な場合は、事前にお知らせいたします。</p>
-            </div>
-            
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3>このページの項目</h3>
-                    <ul>
-                        <li><a href="#recent-news" onclick="scrollToSection('recent-news')">最新のお知らせ</a></li>
-                        <li><a href="#events" onclick="scrollToSection('events')">イベント情報</a></li>
-                        <li><a href="#updates" onclick="scrollToSection('updates')">アップデート履歴</a></li>
-                        <li><a href="#maintenance" onclick="scrollToSection('maintenance')">メンテナンス予定</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <main id="map-page" class="page">
-        <div class="guide-layout">
-            <div class="guide-header">
-                <div class="guide-header-image">写真を追加予定</div>
-                <h1>サーバーマップ</h1>
-                <p>リアルタイムでつぶ鯖の世界を確認できます。<br>
-                新しいタブでDynmapが開きます。</p>
-            </div>
-            
-            <div class="guide-main">
-                <h2>マップについて</h2>
-                <p>つぶ鯖のDynmapでは、リアルタイムでサーバーの世界を確認できます。<br>
-                プレイヤーの位置や建築物、保護された土地などを地図上で見ることができます。</p>
-                
-                <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 8px; margin-top: 30px;">
-                    <h3 style="margin-bottom: 20px;">マップを表示</h3>
-                    <a href="http://202.155.156.82:8123/" 
-                       target="_blank" 
-                       class="link-button"
-                       style="font-size: 1.3rem; padding: 20px 40px;">
-                        マップを開く（新しいタブ）
-                    </a>
-                    <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
-                        ※ クリックすると新しいタブでDynmapが開きます
-                    </p>
-                </div>
-                
-                <h2 style="margin-top: 40px;">マップの使い方</h2>
-                <ul>
-                    <li>マウスホイールでズームイン/アウトができます</li>
-                    <li>ドラッグで地図を移動できます</li>
-                    <li>右上のメニューから表示を切り替えられます</li>
-                    <li>プレイヤーのアイコンをクリックすると詳細が表示されます</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>ページ</h3>
-                    <ul>
-                        <li><a href="#" onclick="showPage('top')">トップページ</a></li>
-                        <li><a href="#" onclick="showPage('guide')">ガイド</a></li>
-                        <li><a href="#" onclick="showPage('rules')">ルール</a></li>
-                        <li><a href="#" onclick="showPage('map')">マップ</a></li>
-                        <li><a href="#" onclick="showPage('news')">最新情報</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Tsubusaba. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            const targetPage = document.getElementById(pageId + '-page');
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-            
-            const activeNavLink = document.querySelector(`nav a[onclick="showPage('${pageId}')"]`);
-            if (activeNavLink) {
-                activeNavLink.classList.add('active');
-            }
+        const rulesContent = {
+            common: `
+                <h2>運営・開発共通規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、つぶ鯖（以下「当サーバー」という）の運営・開発に携わる全メンバー（以下「運営」という）が、健全で公平なサーバー運営を行うことを目的とする。</p>
+
+                <h3>第2条　適用範囲</h3>
+                <p>本規約は、以下の役職を含むすべての運営に適用される。</p>
+                <ul>
+                    <li>サーバー管理</li>
+                    <li>Builder（建築担当）</li>
+                    <li>Moderator（モデレーター）</li>
+                    <li>Developer（開発担当）</li>
+                    <li>Planner（企画担当）</li>
+                    <li>Support（サポート担当）</li>
+                    <li>Admin（管理補助）</li>
+                </ul>
+
+                <h3>第3条　基本姿勢</h3>
+                <ol>
+                    <li>運営は、公正・誠実・協調の三原則をもって行動する。</li>
+                    <li>プレイヤーを尊重し、優越的立場を濫用しない。</li>
+                    <li>内部情報・機密情報を守り、サーバー外での漏洩・共有を禁止する。</li>
+                    <li>無断での設定変更・データ改変・プラグイン導入・ワールド編集を行わない。</li>
+                    <li>意見が対立した場合は、冷静に話し合いを行い、最終判断は鯖主（または代表Admin）が行う。</li>
+                </ol>
+
+                <h3>第4条　行動規範</h3>
+                <ol>
+                    <li>他の運営メンバーやプレイヤーに対し、暴言・侮辱・差別的発言をしてはならない。</li>
+                    <li>チート・バグ利用・不正アクセスなど、Minecraft EULAやMojang規約に反する行為を禁止する。</li>
+                    <li>内部チャンネル・運営用Discord・ドキュメント等の情報を外部に持ち出してはならない。</li>
+                    <li>開発・運営用の権限は、業務目的に限り使用すること。</li>
+                    <li>プレイヤーとの私的トラブルをサーバーに持ち込まない。</li>
+                </ol>
+
+                <h3>第5条　情報管理</h3>
+                <ol>
+                    <li>運営関連ファイル・設定データ・ワールドデータは、常にバックアップを取り、管理責任者の許可なく削除・編集しない。</li>
+                    <li>パスワードや認証情報を第三者と共有しない。</li>
+                    <li>不具合・セキュリティリスクを発見した場合、速やかに管理者へ報告する。</li>
+                </ol>
+
+                <h3>第6条　発言・公表について</h3>
+                <ol>
+                    <li>SNS・配信・動画投稿等で当サーバーの内部情報を公開する場合、管理者の承認を得ること。</li>
+                    <li>運営メンバーとして発言する際は、個人の意見とサーバーの公式見解を明確に区別する。</li>
+                    <li>運営内部の不和・批判・誤情報を公に投稿することを禁止する。</li>
+                </ol>
+
+                <h3>第7条　責任・罰則</h3>
+                <ol>
+                    <li>規約違反が確認された場合、警告・役職停止・除名などの処分を行う。</li>
+                    <li>故意または重大な過失によりサーバーに損害を与えた場合、責任を問うことがある。</li>
+                    <li>運営メンバーは、規約に同意した時点でこれらの処分に従うものとする。</li>
+                </ol>
+
+                <h3>第8条　改定</h3>
+                <p>本規約は、鯖主または代表Adminの判断により改定される場合がある。改定後は、全メンバーに速やかに共有され、同意の上で適用される。</p>
+            `,
+            admin: `
+                <h2>Admin規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーのAdmin（管理補助・運営統括補佐）が、運営全体の秩序・調整・品質維持を行い、サーバー管理者および他の運営メンバーを支援するための基準を定める。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>運営各職（Developer・Builder・Planner・Moderator・Support）の活動監督および調整。</li>
+                    <li>サーバー管理者の補佐および指示の代行（管理者不在時を含む）。</li>
+                    <li>運営会議の議事進行、方針整理、記録管理。</li>
+                    <li>サーバー内部設定・方針・仕様の最終承認または承認補助。</li>
+                    <li>運営メンバー間のトラブル調整および対話支援。</li>
+                    <li>規約改定・運営方針案・内部ルール整備の提案・実施補助。</li>
+                    <li>必要に応じてプレイヤーや外部関係者との連絡・代表対応。</li>
+                </ol>
+
+                <h3>第3条　行動基準</h3>
+                <ol>
+                    <li>Adminは常に中立・冷静・公平・責任感を持った立場で行動する。</li>
+                    <li>他の運営に対し、上位職として指示を行う場合でも、敬意を忘れず協調的に対応する。</li>
+                    <li>サーバー全体の利益を優先し、個人的な感情・意見で判断を歪めてはならない。</li>
+                    <li>管理者の方針に基づき、運営内の行動が逸脱していないかを確認する。</li>
+                    <li>内部情報・議論内容を、許可なく外部へ漏らさない。</li>
+                    <li>決定事項は全員に公平に共有し、透明性を維持する。</li>
+                </ol>
+
+                <h3>第4条　承認・調整業務</h3>
+                <ol>
+                    <li>新しい企画・イベント・システムなどの提案が上がった場合、内容確認・影響範囲の精査・優先順位決定を行い、管理者へ報告する。</li>
+                    <li>Developer・Builder・Planner間で要件が不一致の場合、調整・折衷案の提示を行う。</li>
+                    <li>Adminは、必要に応じて運営内最終承認権限を持つ。</li>
+                    <li>規約・方針・資料の改定を行う際は、改定履歴を明示し、全運営へ共有する。</li>
+                    <li>サーバー停止・緊急対応時には、迅速な判断と指示を行う責任を持つ。</li>
+                </ol>
+
+                <h3>第6条　禁止事項</h3>
+                <ol>
+                    <li>権限を乱用し、他運営やプレイヤーを不当に制限・排除する行為。</li>
+                    <li>管理者の意向を無視した方針変更・命令。</li>
+                    <li>内部情報・会議内容・処分情報の漏洩。</li>
+                    <li>他運営の意見を無視・軽視・抑圧する行為。</li>
+                    <li>不適切な言動・偏見・差別的発言による運営秩序の破壊。</li>
+                    <li>権限・情報を私的目的に使用する行為。</li>
+                </ol>
+            `,
+            developer: `
+                <h2>Developer規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーにおけるDeveloper（開発担当）の行動基準およびGitHubを中心とした開発体制を明確にし、安全かつ効率的なサーバー開発を実現することを目的とする。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>サーバー用プラグイン、Skript、データパック、設定ファイル等の開発・保守。</li>
+                    <li>バグ修正、機能改善、最適化の実装および動作検証。</li>
+                    <li>サーバー構成・性能改善・ログ解析・障害対応。</li>
+                    <li>PlannerやBuilder等、他職からの技術的要望対応。</li>
+                    <li>GitHub上での開発フロー（issue, branch, pull request, review）の運用。</li>
+                </ol>
+
+                <h3>第3条　GitHub運用ルール</h3>
+                <ol>
+                    <li>メインブランチは常に安定稼働状態を維持する。直接プッシュは禁止。必ずPull Request（PR）を経てマージする。</li>
+                    <li>新規開発・修正は必ずブランチを切って作業する。<br>
+                    命名規則例：feature/機能名（新機能）、fix/バグ内容（修正）、hotfix/緊急修正（緊急対応）</li>
+                    <li>PR作成時には、変更内容・目的・影響範囲を明記し、他メンバーによるレビューを経てからマージする。</li>
+                    <li>コードレビューは原則2名以上で確認することを推奨する（少なくとも管理者またはリードDeveloperの承認が必要）。</li>
+                    <li>Commitメッセージは簡潔かつ意味が分かるように記述する（例：fix: イベント発火タイミングを修正）。</li>
+                    <li>機密情報（APIキー・パスワード・トークン・IPなど）はGitに絶対に含めない。.envやconfig.ymlなどはテンプレート化（例：config.example.yml）して共有。</li>
+                    <li>mainブランチへの直接force pushは禁止。</li>
+                    <li>作業終了後、不要になったブランチは削除する。</li>
+                </ol>
+
+                <h3>第4条　開発ルール</h3>
+                <ol>
+                    <li>開発はローカルまたはテストサーバー環境で十分に検証した上で、本番環境に適用する。</li>
+                    <li>プラグイン導入・設定変更は運営またはサーバー管理者の承認を得てから行う。</li>
+                    <li>使用するライブラリ・外部コードはライセンスを確認し、出典をREADMEまたはドキュメントに明記する。</li>
+                    <li>デバッグ・実験コード・不要出力を本番用ブランチに含めない。</li>
+                </ol>
+
+                <h3>第5条　禁止事項</h3>
+                <ol>
+                    <li>管理者の承認なしにサーバー設定・データ・プラグインを改変・削除・導入すること。</li>
+                    <li>GitHub上で他メンバーのコードを無断で改変・上書き・削除すること。</li>
+                    <li>無許可で外部リポジトリやサードパーティコードを利用・配布すること。</li>
+                    <li>GitHubでのコミット・PR・Issueにおいて不適切な発言・煽り・中傷を行うこと。</li>
+                    <li>機密情報を含むファイル・トークンをリポジトリに含めること。</li>
+                    <li>mainブランチ・本番サーバーに対する直接push。</li>
+                </ol>
+            `,
+            builder: `
+                <h2>Builder規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーにおけるBuilder（建築担当）の職務範囲、責任、および行動基準を定め、サーバー内の建築品質と世界観を維持することを目的とする。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>サーバー内の建築物・景観・インフラ（道路・公共施設等）の設計・制作・修繕。</li>
+                    <li>他メンバー（Planner・Adminなど）と協力した、企画・イベント用建築の制作。</li>
+                    <li>建築テーマ・スタイル・素材統一の維持。</li>
+                    <li>サーバー内建築ガイドラインの提案・改善。</li>
+                </ol>
+
+                <h3>第3条　建築に関するルール</h3>
+                <ol>
+                    <li>Builderは、自作のオリジナル建築のみを制作・設置できる。<br>
+                    ・外部の配布建築、他人のワールドデータ、スキーマティック（.schem/.nbt など）の使用を一切禁止する。<br>
+                    ・配布建築を参考にして「一部を模倣」する場合も、外観・構造を自作レベルまで再構成すること。</li>
+                    <li>他プレイヤーの建築区域への無断編集・破壊は禁止。</li>
+                    <li>大規模建築・地形編集を行う場合は、事前にPlannerまたは管理者へ報告を行う。</li>
+                    <li>サーバーのパフォーマンスを著しく下げる装飾・装置の使用は避ける（例：光源密度過多、過剰Redstone）。</li>
+                    <li>建築物はサーバーの世界観・テーマ・季節イベント方針に沿うよう制作すること。</li>
+                </ol>
+
+                <h3>第4条　デザインと知的財産</h3>
+                <ol>
+                    <li>Builderが制作した建築物の著作権は、当サーバーに帰属する。</li>
+                    <li>以下の行為を禁止する：<br>
+                    ・配布建築・他者建築の使用、改変、再配置。<br>
+                    ・外部マップ・建築のインポート、または構造データの読み込み。<br>
+                    ・他サーバーや個人が作成した建築を「参考」と称して転載する行為。<br>
+                    ・完成した建築をサーバー外へ無断で配布・販売する行為。</li>
+                    <li>外部の建築を学習目的で研究すること自体は問題ないが、サーバー内にデータを持ち込むことは禁止。</li>
+                </ol>
+
+                <h3>第5条　チーム作業と連携</h3>
+                <ol>
+                    <li>建築計画や進捗は、建築-課題・進捗フォーラムで共有する。</li>
+                    <li>他のBuilderの作業範囲を尊重し、重複・干渉を避ける。</li>
+                    <li>Planner・Developer・Adminと協議し、サーバーのテーマやシーズン方針に沿った建築を行う。</li>
+                </ol>
+
+                <h3>第7条　責任および処分</h3>
+                <ol>
+                    <li>本規約に違反した場合、警告、作業停止、Builder権限の一時剥奪、建築物の削除・修正命令、悪質な場合は運営からの除名などの処分を行うことがある。</li>
+                    <li>外部建築の無断使用が発覚した場合は、著作権侵害リスクに関わる重大違反として即時処分対象とする。</li>
+                    <li>故意または重大な過失でワールドに損害を与えた場合、復旧作業・修繕対応の責任を負う。</li>
+                </ol>
+            `,
+            moderator: `
+                <h2>Moderator規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーのModerator（モデレーター）が、プレイヤーの秩序維持・コミュニティ管理・トラブル対応を行うにあたり、公正で円滑な運営を行うための基準を定める。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>サーバー内のプレイヤー間トラブル・迷惑行為の監視および対応。</li>
+                    <li>荒らし・チート・不正行為の検出・報告・初期対応。</li>
+                    <li>Discord・ゲーム内チャットなどでの秩序維持とサポート。</li>
+                    <li>運営の指示に基づく一時的な処罰・警告の執行。</li>
+                    <li>プレイヤーからの報告内容の整理と、運営・管理者への共有。</li>
+                    <li>イベント運営時のサポート・監視。</li>
+                </ol>
+
+                <h3>第3条　行動基準</h3>
+                <ol>
+                    <li>Moderatorは常に公平・冷静・中立的立場で行動する。</li>
+                    <li>プレイヤーへの処罰や警告は明確な証拠・理由に基づいて行う。</li>
+                    <li>自身の感情・個人的な関係で対応内容を変えてはならない。</li>
+                    <li>判断が難しい場合は、即座に上位役職（Admin・鯖主）へ報告する。</li>
+                    <li>プレイヤーに対して、威圧的・侮辱的な言動を行ってはならない。</li>
+                    <li>内部情報・運営チャンネルの内容を外部に漏らしてはならない。</li>
+                </ol>
+
+                <h3>第5条　対応ルール</h3>
+                <ol>
+                    <li>警告・ミュート・キック・BANなどの処罰は、運営が定めた処罰基準表に従う。</li>
+                    <li>処罰を行う際は、理由を簡潔に伝えること。</li>
+                    <li>永久BANなどの重大処罰は、必ず運営の承認を得ること。</li>
+                    <li>誤BAN・誤警告が発生した場合は、速やかに謝罪・撤回を行い、報告する。</li>
+                    <li>サーバーのイメージを損なう対応（煽り・差別発言など）は厳禁。</li>
+                    <li>プレイヤーと個人的な対立が発生した場合、自ら判断せず上位へエスカレーションする。</li>
+                </ol>
+
+                <h3>第6条　禁止事項</h3>
+                <ol>
+                    <li>権限を利用して他プレイヤーを不当に優遇・妨害する行為。</li>
+                    <li>個人的な感情・人間関係による処罰・報復。</li>
+                    <li>不正行為者の情報を外部へ漏洩、またはSNSで晒す行為。</li>
+                    <li>運営の許可なく処罰権限を行使する行為。</li>
+                    <li>他プレイヤーへの過度な干渉や監視。</li>
+                    <li>内部データ・運営資料の無断持ち出し。</li>
+                </ol>
+            `,
+            planner: `
+                <h2>Planner規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーのPlanner（企画担当）が、イベントやシステム仕様、サーバー方針などを企画・設計・提案する際に、円滑かつ一貫性のある運営を行うことを目的とする。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>サーバー内イベント・シーズン企画の立案・調整・進行管理。</li>
+                    <li>サーバー仕様（経済システム、生活要素、PvE/PvPバランスなど）の企画および改善提案。</li>
+                    <li>新要素・アップデート・機能追加の構想・仕様書作成。</li>
+                    <li>Developer・Builder・Moderatorとの連携による企画実現の補助。</li>
+                    <li>プレイヤーからの意見・要望の収集・分析・フィードバック。</li>
+                    <li>運営会議における企画提案およびロードマップ策定。</li>
+                </ol>
+
+                <h3>第3条　行動基準</h3>
+                <ol>
+                    <li>Plannerは常にサーバー全体の方向性とプレイヤー体験の向上を最優先とする。</li>
+                    <li>企画・提案は独断で実施せず、運営会議または管理者の承認を得てから進行する。</li>
+                    <li>意見が対立した場合は、客観的根拠（データ・意見集計・テスト結果）をもとに議論する。</li>
+                    <li>提案時は、Developer・Builderの作業負荷や実装難度を考慮し、実現可能な案を提出する。</li>
+                    <li>プレイヤーからの意見を尊重しつつも、全体バランスと公平性を重視する。</li>
+                    <li>自身が関わった企画・資料の管理責任を持ち、無断削除や漏洩を行わない。</li>
+                </ol>
+
+                <h3>第4条　企画・仕様書の作成</h3>
+                <p>イベント・新要素などの提案時は、以下の項目を含む企画書を作成すること。</p>
+                <ul>
+                    <li>企画名</li>
+                    <li>概要 / 目的</li>
+                    <li>実施時期 / 期間</li>
+                    <li>想定参加人数 / 難易度</li>
+                    <li>必要リソース（開発・建築・サポート）</li>
+                    <li>報酬 / バランス要素</li>
+                    <li>注意点 / リスク / 対応策</li>
+                </ul>
+                <ol start="2">
+                    <li>仕様変更・大型イベントは、運営会議での承認後に実装する。</li>
+                    <li>企画進行中は、進捗を定期的に共有し、関連担当者と調整を行う。</li>
+                    <li>終了後は振り返り報告（実施結果・改善点・感想）を提出すること。</li>
+                </ol>
+
+                <h3>第6条　禁止事項</h3>
+                <ol>
+                    <li>運営の承認なしにイベント・企画を独断で実施する行為。</li>
+                    <li>他メンバーの業務領域に無断で介入・指示を出す行為。</li>
+                    <li>プレイヤーに未公開情報や内部企画内容を漏らす行為。</li>
+                    <li>他人の企画・アイデアを自分のものとして提出する行為。</li>
+                    <li>内部資料・進行表・データを無断で削除または外部へ流出させる行為。</li>
+                    <li>他メンバー・プレイヤーへの誹謗・中傷・差別的発言。</li>
+                </ol>
+            `,
+            support: `
+                <h2>Support規約</h2>
+                
+                <h3>第1条　目的</h3>
+                <p>本規約は、当サーバーのSupport（サポート担当）が、プレイヤーへの案内・質問対応・不具合確認・デバッグなどを円滑に行い、快適なサーバー環境の維持を支援することを目的とする。</p>
+
+                <h3>第2条　職務範囲</h3>
+                <ol>
+                    <li>サーバー内・Discord上でのプレイヤー対応（案内・質問・誘導）。</li>
+                    <li>プレイヤーからの不具合報告の一次確認と再現テスト。</li>
+                    <li>Developer・Moderatorへの報告・連携（Issue作成含む）。</li>
+                    <li>サーバー更新・イベント開催時のサポート業務。</li>
+                    <li>不具合・仕様変更・ルールのプレイヤー向け告知補助。</li>
+                    <li>新機能・イベントのデバッグおよび体験テストへの参加。</li>
+                    <li>初心者支援・新規プレイヤーへの説明対応。</li>
+                </ol>
+
+                <h3>第3条　行動基準</h3>
+                <ol>
+                    <li>Supportは常に丁寧・公平・冷静な対応を心がける。</li>
+                    <li>プレイヤーからの質問・苦情に対し、無視・感情的対応をしない。</li>
+                    <li>確認できない事案については、「確認中」「運営に報告します」と案内し、誤情報を伝えない。</li>
+                    <li>自身で判断できない事案は、速やかに運営または該当担当（Developer・Moderator）へ報告する。</li>
+                    <li>運営内で知り得た内部情報を外部へ漏らしてはならない。</li>
+                    <li>プレイヤーとの私的トラブルや偏った発言は控える。</li>
+                </ol>
+
+                <h3>第5条　デバッグ・品質保証</h3>
+                <ol>
+                    <li>新機能・イベント実装時は、Supportがプレイヤー視点での動作確認を行う。</li>
+                    <li>不具合を発見した場合、Developerへ具体的な再現手順と影響範囲を添えて報告する。</li>
+                    <li>仕様変更時は、以前との違いを確認し、プレイヤー混乱防止のための案内文を提案する。</li>
+                    <li>テスト時に使用するアイテム・コマンド権限などは、本番では使用しない。</li>
+                    <li>デバッグログ・内部テスト内容は、外部へ公開してはならない。</li>
+                </ol>
+
+                <h3>第6条　禁止事項</h3>
+                <ol>
+                    <li>権限を利用してプレイヤーを不当に優遇・干渉する行為。</li>
+                    <li>未確認情報や推測を公式情報として発信する行為。</li>
+                    <li>不具合を意図的に利用・隠蔽・放置する行為。</li>
+                    <li>他運営の判断を無視して独断で処理を行う行為。</li>
+                    <li>内部情報・未公開機能・運営発言を漏洩または引用する行為。</li>
+                    <li>プレイヤーとの個人的対立・煽り・差別発言などの不適切対応。</li>
+                </ol>
+            `
+        };
+
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = rulesContent[type];
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
-        
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+
+        function closeModal(event) {
+            if (!event || event.target === document.getElementById('modal')) {
+                const modal = document.getElementById('modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
         }
 
-                function copyToClipboard(text, button) {
-            // クリップボードAPIをサポートしているかチェック
-            if (navigator.clipboard && window.isSecureContext) {
-                // 非同期でクリップボードにコピー
-                navigator.clipboard.writeText(text).then(function() {
-                    showCopySuccess(button);
-                }).catch(function(err) {
-                    // エラーの場合はフォールバック処理
-                    fallbackCopyTextToClipboard(text, button);
-                });
-            } else {
-                // フォールバック処理（古いブラウザ対応）
-                fallbackCopyTextToClipboard(text, button);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
             }
-        }
-
-        function fallbackCopyTextToClipboard(text, button) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            
-            // 要素を見えないようにスタイル設定
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-            
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    showCopySuccess(button);
-                } else {
-                    showCopyError(button);
-                }
-            } catch (err) {
-                showCopyError(button);
-            }
-            
-            document.body.removeChild(textArea);
-        }
-
-        function showCopySuccess(button) {
-            // ボタンのスタイルを変更してコピー完了を示す
-            button.classList.add('copied');
-            const originalText = button.innerHTML;
-            button.innerHTML = '✓';
-            
-            // 1.5秒後に元のスタイルに戻す
-            setTimeout(function() {
-                button.classList.remove('copied');
-                button.innerHTML = originalText;
-            }, 1500);
-        }
-
-        function showCopyError(button) {
-            // エラーの場合の処理（オプション）
-            const originalText = button.innerHTML;
-            button.innerHTML = '✗';
-            button.style.color = 'red';
-            
-            setTimeout(function() {
-                button.innerHTML = originalText;
-                button.style.color = '';
-            }, 1500);
-        }
+        });
     </script>
 </body>
 </html>
