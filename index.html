@@ -866,7 +866,11 @@
             
             <div class="guide-main">
                 <h2 id="basic">サーバー・ワールド一覧</h2>
-                <p style="font-family: 'Arial', sans-serif; font-size: 30px;">メインワールド</p>
+                
+                <h3 style="color: #667c47; font-size: 2rem; margin: 30px 0 20px 0; border-left: 5px solid #a8c08a; padding-left: 15px;">メインサーバー</h3>
+                <p style="margin-bottom: 30px;">メインサーバーは、サバイバル生活と資源採取を楽しむための2つのワールドで構成されています。メインサーバーには/smainで移動できます。</p>
+                
+                <h4 style="font-family: 'Arial', sans-serif; font-size: 1.6rem; color: #111; margin: 25px 0 15px 0;">メインワールド</h4>
             <div class="world-item">
                 <img src="life.png" alt="画像の説明" width="300" height="200">
                 <p>
@@ -878,8 +882,8 @@
                     /mainで移動可能。
                 </p>
             </div>
-            <!-- 資源ワールド -->
-            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">資源ワールド</p>
+            
+            <h4 style="font-family: 'Arial', sans-serif; font-size: 1.6rem; color: #111; margin: 25px 0 15px 0;">資源ワールド</h4>
             <div class="world-item">
                 <img src="resource.png" alt="資源ワールド画像" width="300" height="200">
                 <p>
@@ -890,13 +894,16 @@
                     /resで移動可能。
                 </p>
             </div>
-            <p style="font-family: 'Arial', sans-serif; font-size: 30px;">トラップワールド</p>
+            
+            <h3 style="color: #667c47; font-size: 2rem; margin: 50px 0 20px 0; border-left: 5px solid #a8c08a; padding-left: 15px;">トラップサーバー</h3>
+            <p style="margin-bottom: 30px;">装置やトラップの建築に特化した専用サーバーです。トラップサーバーには/trapで移動できます。</p>
+            
+            <h4 style="font-family: 'Arial', sans-serif; font-size: 1.6rem; color: #111; margin: 25px 0 15px 0;">トラップワールド</h4>
             <div class="world-item">
                 <img src="trap.png" alt="トラップワールド画像" width="300" height="200">
                 <p>
-                    大規模な装置やトラップの建築に特化したワールドです。メインワールドとは異なり、自由に大規模な装置を作成できます。
+                    装置やトラップの建築に特化したワールドです。メインサーバーとは異なり、自由に装置を作成できます。
                     例えば、自動化された農場やモブトラップ、複雑なレッドストーン回路など、創造力を存分に発揮できる場所です。
-                    このワールドも定期的にリセットされるため、常に新しい環境で挑戦と創造を楽しめます。
                     /trapで移動可能。
                 </p>
             </div>
@@ -991,7 +998,11 @@
                     </div>
                     <div class="command-item">
                         <code>/trap</code>
-                        <span>トラップワールドに移動します</span>
+                        <span>トラップサーバーに移動します</span>
+                    </div>
+                    <div class="command-item">
+                        <code>/smain</code>
+                        <span>メインサーバー（メインワールド・資源ワールド）に移動します</span>
                     </div>
                     <div class="command-item">
                         <code>/rec</code>
